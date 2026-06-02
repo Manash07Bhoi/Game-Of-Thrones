@@ -1,0 +1,23 @@
+{
+  "totalLines": 32769,
+  "seasons": {
+    "season_1": 4450,
+    "season_2": 5267,
+    "season_3": 5233,
+    "season_4": 4553,
+    "season_5": 4081,
+    "season_6": 3995,
+    "season_7": 3064,
+    "season_8": 2126
+  },
+  "fileReferences": [
+    "script-lines/season-1.json",
+    "script-lines/season-2.json",
+    "script-lines/season-3.json",
+    "script-lines/season-4.json",
+    "script-lines/season-5.json",
+    "script-lines/season-6.json",
+    "script-lines/season-7.json",
+    "script-lines/season-8.json"
+  ]
+}

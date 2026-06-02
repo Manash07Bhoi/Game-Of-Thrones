@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-06-02T03:54:48.078654Z",
+  "version": "1.0.2",
+  "sourceDatasets": [
+    "battles.csv",
+    "dataset.csv",
+    "game-of-thrones.csv",
+    "character_deaths.csv",
+    "character_predictions_pose.csv"
+  ],
+  "recordCounts": {
+    "seasons": 8,
+    "episodes": 73,
+    "houses": 347,
+    "locations": 27,
+    "characters": 2580,
+    "battles": 38,
+    "scriptLines": 32769,
+    "searchIndexEntries": 20963
+  }
+}

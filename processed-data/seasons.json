@@ -1,0 +1,123 @@
+[
+  {
+    "id": "season_1",
+    "seasonNumber": 1,
+    "episodes": [
+      "episode_1_01",
+      "episode_1_02",
+      "episode_1_03",
+      "episode_1_04",
+      "episode_1_05",
+      "episode_1_06",
+      "episode_1_07",
+      "episode_1_08",
+      "episode_1_09",
+      "episode_1_10"
+    ]
+  },
+  {
+    "id": "season_2",
+    "seasonNumber": 2,
+    "episodes": [
+      "episode_2_01",
+      "episode_2_02",
+      "episode_2_03",
+      "episode_2_04",
+      "episode_2_05",
+      "episode_2_06",
+      "episode_2_07",
+      "episode_2_08",
+      "episode_2_09",
+      "episode_2_10"
+    ]
+  },
+  {
+    "id": "season_3",
+    "seasonNumber": 3,
+    "episodes": [
+      "episode_3_01",
+      "episode_3_02",
+      "episode_3_03",
+      "episode_3_04",
+      "episode_3_05",
+      "episode_3_06",
+      "episode_3_07",
+      "episode_3_08",
+      "episode_3_09",
+      "episode_3_10"
+    ]
+  },
+  {
+    "id": "season_4",
+    "seasonNumber": 4,
+    "episodes": [
+      "episode_4_01",
+      "episode_4_02",
+      "episode_4_03",
+      "episode_4_04",
+      "episode_4_05",
+      "episode_4_06",
+      "episode_4_07",
+      "episode_4_08",
+      "episode_4_09",
+      "episode_4_10"
+    ]
+  },
+  {
+    "id": "season_5",
+    "seasonNumber": 5,
+    "episodes": [
+      "episode_5_01",
+      "episode_5_02",
+      "episode_5_03",
+      "episode_5_04",
+      "episode_5_05",
+      "episode_5_06",
+      "episode_5_07",
+      "episode_5_08",
+      "episode_5_09",
+      "episode_5_10"
+    ]
+  },
+  {
+    "id": "season_6",
+    "seasonNumber": 6,
+    "episodes": [
+      "episode_6_01",
+      "episode_6_02",
+      "episode_6_03",
+      "episode_6_04",
+      "episode_6_05",
+      "episode_6_06",
+      "episode_6_07",
+      "episode_6_08",
+      "episode_6_09",
+      "episode_6_10"
+    ]
+  },
+  {
+    "id": "season_7",
+    "seasonNumber": 7,
+    "episodes": [
+      "episode_7_01",
+      "episode_7_02",
+      "episode_7_03",
+      "episode_7_04",
+      "episode_7_05",
+      "episode_7_06",
+      "episode_7_07"
+    ]
+  },
+  {
+    "id": "season_8",
+    "seasonNumber": 8,
+    "episodes": [
+      "episode_8_01",
+      "episode_8_02",
+      "episode_8_03",
+      "episode_8_04",
+      "episode_8_05",
+      "episode_8_06"
+    ]
+  }
+]
