@@ -1,0 +1,1089 @@
+[
+  {
+    "id": "battle_battle-of-the-golden-tooth",
+    "name": "Battle of the Golden Tooth",
+    "year": 298,
+    "battleType": "pitched battle",
+    "locationId": "loc_golden-tooth",
+    "region": "The Westerlands",
+    "attackerSize": 15000.0,
+    "defenderSize": 4000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-tully"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_jaime-lannister"
+      ],
+      "defenders": [
+        "char_vance",
+        "char_clement-piper"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-at-the-mummer-s-ford",
+    "name": "Battle at the Mummer's Ford",
+    "year": 298,
+    "battleType": "ambush",
+    "locationId": "loc_mummer-s-ford",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": 120.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-baratheon"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_gregor-clegane"
+      ],
+      "defenders": [
+        "char_beric-dondarrion"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-riverrun",
+    "name": "Battle of Riverrun",
+    "year": 298,
+    "battleType": "pitched battle",
+    "locationId": "loc_riverrun",
+    "region": "The Riverlands",
+    "attackerSize": 15000.0,
+    "defenderSize": 10000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-tully"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_andros-brax",
+        "char_jaime-lannister"
+      ],
+      "defenders": [
+        "char_edmure-tully",
+        "char_tytos-blackwood"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-green-fork",
+    "name": "Battle of the Green Fork",
+    "year": 298,
+    "battleType": "pitched battle",
+    "locationId": "loc_green-fork",
+    "region": "The Riverlands",
+    "attackerSize": 18000.0,
+    "defenderSize": 20000.0,
+    "attackerOutcome": "loss",
+    "factions": {
+      "attackers": [
+        "house_house-stark"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_medger-cerwyn",
+        "char_roose-bolton",
+        "char_wylis-manderly",
+        "char_harrion-karstark",
+        "char_halys-hornwood"
+      ],
+      "defenders": [
+        "char_kevan-lannister",
+        "char_gregor-clegane",
+        "char_tywin-lannister",
+        "char_addam-marbrand"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-whispering-wood",
+    "name": "Battle of the Whispering Wood",
+    "year": 298,
+    "battleType": "ambush",
+    "locationId": "loc_whispering-wood",
+    "region": "The Riverlands",
+    "attackerSize": 1875.0,
+    "defenderSize": 6000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-stark",
+        "house_house-tully"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_robb-stark",
+        "char_brynden-tully"
+      ],
+      "defenders": [
+        "char_jaime-lannister"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-camps",
+    "name": "Battle of the Camps",
+    "year": 298,
+    "battleType": "ambush",
+    "locationId": "loc_riverrun",
+    "region": "The Riverlands",
+    "attackerSize": 6000.0,
+    "defenderSize": 12625.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-stark",
+        "house_house-tully"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_robb-stark",
+        "char_brynden-tully",
+        "char_tytos-blackwood"
+      ],
+      "defenders": [
+        "char_forley-prester",
+        "char_lord-andros-brax"
+      ]
+    }
+  },
+  {
+    "id": "battle_sack-of-darry",
+    "name": "Sack of Darry",
+    "year": 298,
+    "battleType": "pitched battle",
+    "locationId": "loc_darry",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-darry"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_gregor-clegane"
+      ],
+      "defenders": [
+        "char_lyman-darry"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-moat-cailin",
+    "name": "Battle of Moat Cailin",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_moat-cailin",
+    "region": "The North",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_victarion-greyjoy"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_battle-of-deepwood-motte",
+    "name": "Battle of Deepwood Motte",
+    "year": 299,
+    "battleType": "siege",
+    "locationId": "loc_deepwood-motte",
+    "region": "The North",
+    "attackerSize": 1000.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_asha-greyjoy"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_battle-of-the-stony-shore",
+    "name": "Battle of the Stony Shore",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_stony-shore",
+    "region": "The North",
+    "attackerSize": 264.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_theon-greyjoy"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_battle-of-torrhen-s-square",
+    "name": "Battle of Torrhen's Square",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_torrhen-s-square",
+    "region": "The North",
+    "attackerSize": 244.0,
+    "defenderSize": 900.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-stark"
+      ],
+      "defenders": [
+        "house_house-greyjoy"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_cley-cerwyn",
+        "char_rodrik-cassel"
+      ],
+      "defenders": [
+        "char_dagmer-cleftjaw"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-winterfell",
+    "name": "Battle of Winterfell",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_winterfell",
+    "region": "The North",
+    "attackerSize": 20.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_theon-greyjoy"
+      ],
+      "defenders": [
+        "char_bran-stark"
+      ]
+    }
+  },
+  {
+    "id": "battle_sack-of-torrhen-s-square",
+    "name": "Sack of Torrhen's Square",
+    "year": 299,
+    "battleType": "siege",
+    "locationId": "loc_torrhen-s-square",
+    "region": "The North",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_dagmer-cleftjaw"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_sack-of-winterfell",
+    "name": "Sack of Winterfell",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_winterfell",
+    "region": "The North",
+    "attackerSize": 618.0,
+    "defenderSize": 2000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy",
+        "house_house-bolton"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_theon-greyjoy",
+        "char_ramsay-snow"
+      ],
+      "defenders": [
+        "char_leobald-tallhart",
+        "char_cley-cerwyn",
+        "char_rodrik-cassel"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-oxcross",
+    "name": "Battle of Oxcross",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_oxcross",
+    "region": "The Westerlands",
+    "attackerSize": 6000.0,
+    "defenderSize": 10000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-stark",
+        "house_house-tully"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_robb-stark",
+        "char_brynden-tully"
+      ],
+      "defenders": [
+        "char_roland-crakehall",
+        "char_stafford-lannister",
+        "char_antario-jast"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-storm-s-end",
+    "name": "Siege of Storm's End",
+    "year": 299,
+    "battleType": "siege",
+    "locationId": "loc_storm-s-end",
+    "region": "The Stormlands",
+    "attackerSize": 5000.0,
+    "defenderSize": 20000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-baratheon"
+      ],
+      "defenders": [
+        "house_house-baratheon"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_stannis-baratheon",
+        "char_davos-seaworth"
+      ],
+      "defenders": [
+        "char_loras-tyrell",
+        "char_randyll-tarly",
+        "char_cortnay-penrose",
+        "char_renly-baratheon",
+        "char_mathis-rowan"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-fords",
+    "name": "Battle of the Fords",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_red-fork",
+    "region": "The Riverlands",
+    "attackerSize": 20000.0,
+    "defenderSize": 10000.0,
+    "attackerOutcome": "loss",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-tully"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_leo-lefford",
+        "char_gregor-clegane",
+        "char_tywin-lannister",
+        "char_lyle-crakehall",
+        "char_addam-marbrand",
+        "char_flement-brax"
+      ],
+      "defenders": [
+        "char_jason-mallister",
+        "char_karyl-vance",
+        "char_edmure-tully"
+      ]
+    }
+  },
+  {
+    "id": "battle_sack-of-harrenhal",
+    "name": "Sack of Harrenhal",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_harrenhal",
+    "region": "The Riverlands",
+    "attackerSize": 100.0,
+    "defenderSize": 100.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-stark"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_vargo-hoat",
+        "char_roose-bolton",
+        "char_robett-glover"
+      ],
+      "defenders": [
+        "char_amory-lorch"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-crag",
+    "name": "Battle of the Crag",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_crag",
+    "region": "The Westerlands",
+    "attackerSize": 6000.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-stark"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_smalljon-umber",
+        "char_black-walder-frey",
+        "char_robb-stark"
+      ],
+      "defenders": [
+        "char_rolph-spicer"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-blackwater",
+    "name": "Battle of the Blackwater",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_king-s-landing",
+    "region": "The Crownlands",
+    "attackerSize": 21000.0,
+    "defenderSize": 7250.0,
+    "attackerOutcome": "loss",
+    "factions": {
+      "attackers": [
+        "house_house-baratheon"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_stannis-baratheon",
+        "char_imry-florent",
+        "char_rolland-storm",
+        "char_guyard-morrigen",
+        "char_davos-seaworth",
+        "char_salladhor-saan"
+      ],
+      "defenders": [
+        "char_garlan-tyrell",
+        "char_mace-tyrell",
+        "char_tywin-lannister",
+        "char_jacelyn-bywater",
+        "char_sandor-clegane",
+        "char_tyrion-lannister",
+        "char_randyll-tarly"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-darry",
+    "name": "Siege of Darry",
+    "year": 299,
+    "battleType": "siege",
+    "locationId": "loc_darry",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-darry"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_helman-tallhart"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_battle-of-duskendale",
+    "name": "Battle of Duskendale",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_duskendale",
+    "region": "The Crownlands",
+    "attackerSize": 3000.0,
+    "defenderSize": null,
+    "attackerOutcome": "loss",
+    "factions": {
+      "attackers": [
+        "house_house-stark"
+      ],
+      "defenders": [
+        "house_house-lannister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_helman-tallhart",
+        "char_robertt-glover"
+      ],
+      "defenders": [
+        "char_randyll-tarly",
+        "char_gregor-clegane"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-burning-septry",
+    "name": "Battle of the Burning Septry",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": null,
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_brotherhood-without-banners"
+      ],
+      "defenders": [
+        "house_brave-companions"
+      ]
+    },
+    "commanders": {
+      "attackers": [],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_battle-of-the-ruby-ford",
+    "name": "Battle of the Ruby Ford",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_ruby-ford",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": 6000.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_gregor-clegane"
+      ],
+      "defenders": [
+        "char_roose-bolton",
+        "char_wylis-manderly"
+      ]
+    }
+  },
+  {
+    "id": "battle_retaking-of-harrenhal",
+    "name": "Retaking of Harrenhal",
+    "year": 299,
+    "battleType": "pitched battle",
+    "locationId": "loc_harrenhal",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_brave-companions"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_gregor-clegane"
+      ],
+      "defenders": [
+        "char_vargo-hoat"
+      ]
+    }
+  },
+  {
+    "id": "battle_the-red-wedding",
+    "name": "The Red Wedding",
+    "year": 299,
+    "battleType": "ambush",
+    "locationId": "loc_the-twins",
+    "region": "The Riverlands",
+    "attackerSize": 3500.0,
+    "defenderSize": 3500.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-bolton",
+        "house_house-frey"
+      ],
+      "defenders": [
+        "house_house-stark"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_walder-frey",
+        "char_walder-rivers",
+        "char_roose-bolton"
+      ],
+      "defenders": [
+        "char_robb-stark"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-seagard",
+    "name": "Siege of Seagard",
+    "year": 299,
+    "battleType": "siege",
+    "locationId": "loc_seagard",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-frey"
+      ],
+      "defenders": [
+        "house_house-mallister"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_walder-frey"
+      ],
+      "defenders": [
+        "char_jason-mallister"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-castle-black",
+    "name": "Battle of Castle Black",
+    "year": 300,
+    "battleType": "siege",
+    "locationId": "loc_castle-black",
+    "region": "Beyond the Wall",
+    "attackerSize": 100000.0,
+    "defenderSize": 1240.0,
+    "attackerOutcome": "loss",
+    "factions": {
+      "attackers": [
+        "house_house-giants",
+        "house_house-thenns",
+        "house_house-free-folk"
+      ],
+      "defenders": [
+        "house_night-s-watch",
+        "house_house-baratheon"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_mance-rayder",
+        "char_varamyr",
+        "char_tormund-giantsbane",
+        "char_harma-dogshead",
+        "char_magnar-styr"
+      ],
+      "defenders": [
+        "char_donal-noye",
+        "char_jon-snow",
+        "char_stannis-baratheon",
+        "char_cotter-pyke"
+      ]
+    }
+  },
+  {
+    "id": "battle_fall-of-moat-cailin",
+    "name": "Fall of Moat Cailin",
+    "year": 300,
+    "battleType": "siege",
+    "locationId": "loc_moat-cailin",
+    "region": "The North",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-bolton"
+      ],
+      "defenders": [
+        "house_house-greyjoy"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_ramsey-bolton"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_sack-of-saltpans",
+    "name": "Sack of Saltpans",
+    "year": 300,
+    "battleType": "razing",
+    "locationId": "loc_saltpans",
+    "region": "The Riverlands",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_brave-companions"
+      ],
+      "defenders": []
+    },
+    "commanders": {
+      "attackers": [
+        "char_rorge"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_retaking-of-deepwood-motte",
+    "name": "Retaking of Deepwood Motte",
+    "year": 300,
+    "battleType": "pitched battle",
+    "locationId": "loc_deepwood-motte",
+    "region": "The North",
+    "attackerSize": 4500.0,
+    "defenderSize": 200.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-mormont",
+        "house_house-baratheon",
+        "house_house-glover",
+        "house_house-karstark"
+      ],
+      "defenders": [
+        "house_house-greyjoy"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_alysane-mormot",
+        "char_stannis-baratheon"
+      ],
+      "defenders": [
+        "char_asha-greyjoy"
+      ]
+    }
+  },
+  {
+    "id": "battle_battle-of-the-shield-islands",
+    "name": "Battle of the Shield Islands",
+    "year": 300,
+    "battleType": "pitched battle",
+    "locationId": "loc_shield-islands",
+    "region": "The Reach",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-tyrell"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_euron-greyjoy",
+        "char_victarion-greyjoy"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_invasion-of-ryamsport-vinetown-and-starfish-harbor",
+    "name": "Invasion of Ryamsport, Vinetown, and Starfish Harbor",
+    "year": 300,
+    "battleType": "razing",
+    "locationId": "loc_ryamsport-vinetown-starfish-harbor",
+    "region": "The Reach",
+    "attackerSize": null,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-greyjoy"
+      ],
+      "defenders": [
+        "house_house-tyrell"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_euron-greyjoy",
+        "char_victarion-greyjoy"
+      ],
+      "defenders": []
+    }
+  },
+  {
+    "id": "battle_second-seige-of-storm-s-end",
+    "name": "Second Seige of Storm's End",
+    "year": 300,
+    "battleType": "siege",
+    "locationId": "loc_storm-s-end",
+    "region": "The Stormlands",
+    "attackerSize": null,
+    "defenderSize": 200.0,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-baratheon"
+      ],
+      "defenders": [
+        "house_house-baratheon"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_mace-tyrell",
+        "char_mathis-rowan"
+      ],
+      "defenders": [
+        "char_gilbert-farring"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-dragonstone",
+    "name": "Siege of Dragonstone",
+    "year": 300,
+    "battleType": "siege",
+    "locationId": "loc_dragonstone",
+    "region": "The Stormlands",
+    "attackerSize": 2000.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-baratheon"
+      ],
+      "defenders": [
+        "house_house-baratheon"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_raxter-redwyne",
+        "char_loras-tyrell"
+      ],
+      "defenders": [
+        "char_rolland-storm"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-riverrun",
+    "name": "Siege of Riverrun",
+    "year": 300,
+    "battleType": "siege",
+    "locationId": "loc_riverrun",
+    "region": "The Riverlands",
+    "attackerSize": 3000.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-frey",
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-tully"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_daven-lannister",
+        "char_ryman-fey",
+        "char_jaime-lannister"
+      ],
+      "defenders": [
+        "char_brynden-tully"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-raventree",
+    "name": "Siege of Raventree",
+    "year": 300,
+    "battleType": "siege",
+    "locationId": "loc_raventree",
+    "region": "The Riverlands",
+    "attackerSize": 1500.0,
+    "defenderSize": null,
+    "attackerOutcome": "win",
+    "factions": {
+      "attackers": [
+        "house_house-bracken",
+        "house_house-lannister"
+      ],
+      "defenders": [
+        "house_house-blackwood"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_jonos-bracken",
+        "char_jaime-lannister"
+      ],
+      "defenders": [
+        "char_tytos-blackwood"
+      ]
+    }
+  },
+  {
+    "id": "battle_siege-of-winterfell",
+    "name": "Siege of Winterfell",
+    "year": 300,
+    "battleType": null,
+    "locationId": "loc_winterfell",
+    "region": "The North",
+    "attackerSize": 5000.0,
+    "defenderSize": 8000.0,
+    "attackerOutcome": null,
+    "factions": {
+      "attackers": [
+        "house_house-mormont",
+        "house_house-baratheon",
+        "house_house-glover",
+        "house_house-karstark"
+      ],
+      "defenders": [
+        "house_house-bolton",
+        "house_house-frey"
+      ]
+    },
+    "commanders": {
+      "attackers": [
+        "char_stannis-baratheon"
+      ],
+      "defenders": [
+        "char_roose-bolton"
+      ]
+    }
+  }
+]

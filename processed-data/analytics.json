@@ -1,0 +1,1120 @@
+{
+  "characterPopularity": [
+    {
+      "id": "char_tommen-baratheon",
+      "name": "Tommen Baratheon",
+      "score": 1.0
+    },
+    {
+      "id": "char_joffrey-baratheon",
+      "name": "Joffrey Baratheon",
+      "score": 1.0
+    },
+    {
+      "id": "char_margaery-tyrell",
+      "name": "Margaery Tyrell",
+      "score": 1.0
+    },
+    {
+      "id": "char_robb-stark",
+      "name": "Robb Stark",
+      "score": 1.0
+    },
+    {
+      "id": "char_stannis-baratheon",
+      "name": "Stannis Baratheon",
+      "score": 1.0
+    },
+    {
+      "id": "char_aegon-i-targaryen",
+      "name": "Aegon I Targaryen",
+      "score": 1.0
+    },
+    {
+      "id": "char_aerys-ii-targaryen",
+      "name": "Aerys II Targaryen",
+      "score": 1.0
+    },
+    {
+      "id": "char_arya-stark",
+      "name": "Arya Stark",
+      "score": 1.0
+    },
+    {
+      "id": "char_bran-stark",
+      "name": "Bran Stark",
+      "score": 1.0
+    },
+    {
+      "id": "char_cersei-lannister",
+      "name": "Cersei Lannister",
+      "score": 1.0
+    },
+    {
+      "id": "char_barristan-selmy",
+      "name": "Barristan Selmy",
+      "score": 1.0
+    },
+    {
+      "id": "char_daenerys-targaryen",
+      "name": "Daenerys Targaryen",
+      "score": 1.0
+    },
+    {
+      "id": "char_eddard-stark",
+      "name": "Eddard Stark",
+      "score": 1.0
+    },
+    {
+      "id": "char_jaime-lannister",
+      "name": "Jaime Lannister",
+      "score": 1.0
+    },
+    {
+      "id": "char_jon-snow",
+      "name": "Jon Snow",
+      "score": 1.0
+    },
+    {
+      "id": "char_renly-baratheon",
+      "name": "Renly Baratheon",
+      "score": 1.0
+    },
+    {
+      "id": "char_theon-greyjoy",
+      "name": "Theon Greyjoy",
+      "score": 1.0
+    },
+    {
+      "id": "char_sansa-stark",
+      "name": "Sansa Stark",
+      "score": 1.0
+    },
+    {
+      "id": "char_tywin-lannister",
+      "name": "Tywin Lannister",
+      "score": 1.0
+    },
+    {
+      "id": "char_petyr-baelish",
+      "name": "Petyr Baelish",
+      "score": 1.0
+    },
+    {
+      "id": "char_tyrion-lannister",
+      "name": "Tyrion Lannister",
+      "score": 1.0
+    },
+    {
+      "id": "char_roose-bolton",
+      "name": "Roose Bolton",
+      "score": 0.97993311
+    },
+    {
+      "id": "char_samwell-tarly",
+      "name": "Samwell Tarly",
+      "score": 0.969899666
+    },
+    {
+      "id": "char_davos-seaworth",
+      "name": "Davos Seaworth",
+      "score": 0.969899666
+    },
+    {
+      "id": "char_varys",
+      "name": "Varys",
+      "score": 0.899665552
+    },
+    {
+      "id": "char_walder-frey",
+      "name": "Walder Frey",
+      "score": 0.89632107
+    },
+    {
+      "id": "char_kevan-lannister",
+      "name": "Kevan Lannister",
+      "score": 0.869565217
+    },
+    {
+      "id": "char_mace-tyrell",
+      "name": "Mace Tyrell",
+      "score": 0.856187291
+    },
+    {
+      "id": "char_gregor-clegane",
+      "name": "Gregor Clegane",
+      "score": 0.836120401
+    },
+    {
+      "id": "char_jon-arryn",
+      "name": "Jon Arryn",
+      "score": 0.836120401
+    },
+    {
+      "id": "char_rhaegar-targaryen",
+      "name": "Rhaegar Targaryen",
+      "score": 0.799331104
+    },
+    {
+      "id": "char_oberyn-martell",
+      "name": "Oberyn Martell",
+      "score": 0.772575251
+    },
+    {
+      "id": "char_daeron-ii-targaryen",
+      "name": "Daeron II Targaryen",
+      "score": 0.765886288
+    },
+    {
+      "id": "char_aegon-ii-targaryen",
+      "name": "Aegon II Targaryen",
+      "score": 0.759197324
+    },
+    {
+      "id": "char_melisandre",
+      "name": "Melisandre",
+      "score": 0.745819398
+    },
+    {
+      "id": "char_euron-greyjoy",
+      "name": "Euron Greyjoy",
+      "score": 0.739130435
+    },
+    {
+      "id": "char_balon-greyjoy",
+      "name": "Balon Greyjoy",
+      "score": 0.739130435
+    },
+    {
+      "id": "char_jorah-mormont",
+      "name": "Jorah Mormont",
+      "score": 0.722408027
+    },
+    {
+      "id": "char_jon-connington",
+      "name": "Jon Connington",
+      "score": 0.719063545
+    },
+    {
+      "id": "char_asha-greyjoy",
+      "name": "Asha Greyjoy",
+      "score": 0.7090301
+    },
+    {
+      "id": "char_mance-rayder",
+      "name": "Mance Rayder",
+      "score": 0.7090301
+    },
+    {
+      "id": "char_maegor-i-targaryen",
+      "name": "Maegor I Targaryen",
+      "score": 0.705685619
+    },
+    {
+      "id": "char_victarion-greyjoy",
+      "name": "Victarion Greyjoy",
+      "score": 0.705685619
+    },
+    {
+      "id": "char_aegon-v-targaryen",
+      "name": "Aegon V Targaryen",
+      "score": 0.695652174
+    },
+    {
+      "id": "char_sandor-clegane",
+      "name": "Sandor Clegane",
+      "score": 0.695652174
+    },
+    {
+      "id": "char_viserys-i-targaryen",
+      "name": "Viserys I Targaryen",
+      "score": 0.678929766
+    },
+    {
+      "id": "char_aegon-iv-targaryen",
+      "name": "Aegon IV Targaryen",
+      "score": 0.675585284
+    },
+    {
+      "id": "char_daemon-targaryen",
+      "name": "Daemon Targaryen",
+      "score": 0.668896321
+    },
+    {
+      "id": "char_loras-tyrell",
+      "name": "Loras Tyrell",
+      "score": 0.665551839
+    },
+    {
+      "id": "char_jaehaerys-i-targaryen",
+      "name": "Jaehaerys I Targaryen",
+      "score": 0.658862876
+    },
+    {
+      "id": "char_edmure-tully",
+      "name": "Edmure Tully",
+      "score": 0.655518395
+    },
+    {
+      "id": "char_pycelle",
+      "name": "Pycelle",
+      "score": 0.638795987
+    },
+    {
+      "id": "char_aegon-iii-targaryen",
+      "name": "Aegon III Targaryen",
+      "score": 0.62541806
+    },
+    {
+      "id": "char_aerys-i-targaryen",
+      "name": "Aerys I Targaryen",
+      "score": 0.622073579
+    },
+    {
+      "id": "char_viserys-targaryen",
+      "name": "Viserys Targaryen",
+      "score": 0.622073579
+    },
+    {
+      "id": "char_randyll-tarly",
+      "name": "Randyll Tarly",
+      "score": 0.618729097
+    },
+    {
+      "id": "char_jeor-mormont",
+      "name": "Jeor Mormont",
+      "score": 0.618729097
+    },
+    {
+      "id": "char_viserys-ii-targaryen",
+      "name": "Viserys II Targaryen",
+      "score": 0.605351171
+    },
+    {
+      "id": "char_brynden-rivers",
+      "name": "Brynden Rivers",
+      "score": 0.605351171
+    },
+    {
+      "id": "char_aenys-i-targaryen",
+      "name": "Aenys I Targaryen",
+      "score": 0.571906355
+    },
+    {
+      "id": "char_arianne-martell",
+      "name": "Arianne Martell",
+      "score": 0.571906355
+    },
+    {
+      "id": "char_janos-slynt",
+      "name": "Janos Slynt",
+      "score": 0.56187291
+    },
+    {
+      "id": "char_myrcella-baratheon",
+      "name": "Myrcella Baratheon",
+      "score": 0.56187291
+    },
+    {
+      "id": "char_drogo",
+      "name": "Drogo",
+      "score": 0.558528428
+    },
+    {
+      "id": "char_quentyn-martell",
+      "name": "Quentyn Martell",
+      "score": 0.551839465
+    },
+    {
+      "id": "char_rickon-stark",
+      "name": "Rickon Stark",
+      "score": 0.551839465
+    },
+    {
+      "id": "char_qyburn",
+      "name": "Qyburn",
+      "score": 0.535117057
+    },
+    {
+      "id": "char_corlys-velaryon",
+      "name": "Corlys Velaryon",
+      "score": 0.525083612
+    },
+    {
+      "id": "char_daeron-i-targaryen",
+      "name": "Daeron I Targaryen",
+      "score": 0.518394649
+    },
+    {
+      "id": "char_paxter-redwyne",
+      "name": "Paxter Redwyne",
+      "score": 0.511705686
+    },
+    {
+      "id": "char_criston-cole",
+      "name": "Criston Cole",
+      "score": 0.505016722
+    },
+    {
+      "id": "char_baelor-i-targaryen",
+      "name": "Baelor I Targaryen",
+      "score": 0.501672241
+    },
+    {
+      "id": "char_doran-martell",
+      "name": "Doran Martell",
+      "score": 0.498327759
+    },
+    {
+      "id": "char_jaehaerys-ii-targaryen",
+      "name": "Jaehaerys II Targaryen",
+      "score": 0.494983278
+    },
+    {
+      "id": "char_orys-baratheon",
+      "name": "Orys Baratheon",
+      "score": 0.488294314
+    },
+    {
+      "id": "char_cregan-stark",
+      "name": "Cregan Stark",
+      "score": 0.484949833
+    },
+    {
+      "id": "char_lancel-lannister",
+      "name": "Lancel Lannister",
+      "score": 0.47826087
+    },
+    {
+      "id": "char_baelor-targaryen-son-of-daeron-ii",
+      "name": "Baelor Targaryen (son of Daeron II)",
+      "score": 0.474916388
+    },
+    {
+      "id": "char_bronn",
+      "name": "Bronn",
+      "score": 0.471571906
+    },
+    {
+      "id": "char_ramsay-snow",
+      "name": "Ramsay Snow",
+      "score": 0.461538462
+    },
+    {
+      "id": "char_aeron-greyjoy",
+      "name": "Aeron Greyjoy",
+      "score": 0.45819398
+    },
+    {
+      "id": "char_harys-swyft",
+      "name": "Harys Swyft",
+      "score": 0.451505017
+    },
+    {
+      "id": "char_hizdahr-zo-loraq",
+      "name": "Hizdahr zo Loraq",
+      "score": 0.444816054
+    },
+    {
+      "id": "char_elia-martell",
+      "name": "Elia Martell",
+      "score": 0.441471572
+    },
+    {
+      "id": "char_gendry",
+      "name": "Gendry",
+      "score": 0.43812709
+    },
+    {
+      "id": "char_merrett-frey",
+      "name": "Merrett Frey",
+      "score": 0.434782609
+    },
+    {
+      "id": "char_beric-dondarrion",
+      "name": "Beric Dondarrion",
+      "score": 0.434782609
+    },
+    {
+      "id": "char_valarr-targaryen",
+      "name": "Valarr Targaryen",
+      "score": 0.431438127
+    },
+    {
+      "id": "char_jeyne-westerling",
+      "name": "Jeyne Westerling",
+      "score": 0.424749164
+    },
+    {
+      "id": "char_ambrose-butterwell",
+      "name": "Ambrose Butterwell",
+      "score": 0.414715719
+    },
+    {
+      "id": "char_gerold-hightower",
+      "name": "Gerold Hightower",
+      "score": 0.414715719
+    },
+    {
+      "id": "char_benjen-stark",
+      "name": "Benjen Stark",
+      "score": 0.401337793
+    },
+    {
+      "id": "char_rodrik-cassel",
+      "name": "Rodrik Cassel",
+      "score": 0.397993311
+    },
+    {
+      "id": "char_selyse-florent",
+      "name": "Selyse Florent",
+      "score": 0.397993311
+    },
+    {
+      "id": "char_illyrio-mopatis",
+      "name": "Illyrio Mopatis",
+      "score": 0.394648829
+    },
+    {
+      "id": "char_jeyne-poole",
+      "name": "Jeyne Poole",
+      "score": 0.384615385
+    },
+    {
+      "id": "char_aurane-waters",
+      "name": "Aurane Waters",
+      "score": 0.377926421
+    },
+    {
+      "id": "char_nymeria-sand",
+      "name": "Nymeria Sand",
+      "score": 0.377926421
+    },
+    {
+      "id": "char_orton-merryweather",
+      "name": "Orton Merryweather",
+      "score": 0.37458194
+    },
+    {
+      "id": "char_otto-hightower",
+      "name": "Otto Hightower",
+      "score": 0.371237458
+    }
+  ],
+  "mostSpokenCharacters": [
+    {
+      "id": "char_tyrion",
+      "name": "Tyrion",
+      "lines": 1547
+    },
+    {
+      "id": "char_cersei",
+      "name": "Cersei",
+      "lines": 904
+    },
+    {
+      "id": "char_jon",
+      "name": "Jon",
+      "lines": 882
+    },
+    {
+      "id": "char_jaime",
+      "name": "Jaime",
+      "lines": 862
+    },
+    {
+      "id": "char_daenerys",
+      "name": "Daenerys",
+      "lines": 862
+    },
+    {
+      "id": "char_sansa",
+      "name": "Sansa",
+      "lines": 709
+    },
+    {
+      "id": "char_arya",
+      "name": "Arya",
+      "lines": 667
+    },
+    {
+      "id": "char_davos",
+      "name": "Davos",
+      "lines": 504
+    },
+    {
+      "id": "char_theon",
+      "name": "Theon",
+      "lines": 406
+    },
+    {
+      "id": "char_bronn",
+      "name": "Bronn",
+      "lines": 405
+    },
+    {
+      "id": "char_sam",
+      "name": "Sam",
+      "lines": 399
+    },
+    {
+      "id": "char_varys",
+      "name": "Varys",
+      "lines": 388
+    },
+    {
+      "id": "char_brienne",
+      "name": "Brienne",
+      "lines": 376
+    },
+    {
+      "id": "char_tywin",
+      "name": "Tywin",
+      "lines": 347
+    },
+    {
+      "id": "char_bran",
+      "name": "Bran",
+      "lines": 329
+    },
+    {
+      "id": "char_stannis",
+      "name": "Stannis",
+      "lines": 292
+    },
+    {
+      "id": "char_jorah",
+      "name": "Jorah",
+      "lines": 291
+    },
+    {
+      "id": "char_margaery",
+      "name": "Margaery",
+      "lines": 277
+    },
+    {
+      "id": "char_ramsay",
+      "name": "Ramsay",
+      "lines": 269
+    },
+    {
+      "id": "char_jon-snow",
+      "name": "Jon Snow",
+      "lines": 241
+    },
+    {
+      "id": "char_robb",
+      "name": "Robb",
+      "lines": 239
+    },
+    {
+      "id": "char_eddard-stark",
+      "name": "Eddard Stark",
+      "lines": 233
+    },
+    {
+      "id": "char_melisandre",
+      "name": "Melisandre",
+      "lines": 227
+    },
+    {
+      "id": "char_shae",
+      "name": "Shae",
+      "lines": 223
+    },
+    {
+      "id": "char_tormund",
+      "name": "Tormund",
+      "lines": 211
+    },
+    {
+      "id": "char_man",
+      "name": "Man",
+      "lines": 211
+    },
+    {
+      "id": "char_joffrey",
+      "name": "Joffrey",
+      "lines": 207
+    },
+    {
+      "id": "char_littlefinger",
+      "name": "Littlefinger",
+      "lines": 206
+    },
+    {
+      "id": "char_hound",
+      "name": "Hound",
+      "lines": 205
+    },
+    {
+      "id": "char_gilly",
+      "name": "Gilly",
+      "lines": 199
+    },
+    {
+      "id": "char_tyrion-lannister",
+      "name": "Tyrion Lannister",
+      "lines": 198
+    },
+    {
+      "id": "char_olenna",
+      "name": "Olenna",
+      "lines": 198
+    },
+    {
+      "id": "char_gendry",
+      "name": "Gendry",
+      "lines": 196
+    },
+    {
+      "id": "char_missandei",
+      "name": "Missandei",
+      "lines": 186
+    },
+    {
+      "id": "char_catelyn",
+      "name": "Catelyn",
+      "lines": 181
+    },
+    {
+      "id": "char_ygritte",
+      "name": "Ygritte",
+      "lines": 168
+    },
+    {
+      "id": "char_daario",
+      "name": "Daario",
+      "lines": 160
+    },
+    {
+      "id": "char_podrick",
+      "name": "Podrick",
+      "lines": 154
+    },
+    {
+      "id": "char_osha",
+      "name": "Osha",
+      "lines": 145
+    },
+    {
+      "id": "char_yara",
+      "name": "Yara",
+      "lines": 142
+    },
+    {
+      "id": "char_oberyn",
+      "name": "Oberyn",
+      "lines": 132
+    },
+    {
+      "id": "char_baelish",
+      "name": "Baelish",
+      "lines": 126
+    },
+    {
+      "id": "char_catelyn-stark",
+      "name": "Catelyn Stark",
+      "lines": 120
+    },
+    {
+      "id": "char_jaqen",
+      "name": "Jaqen",
+      "lines": 117
+    },
+    {
+      "id": "char_tommen",
+      "name": "Tommen",
+      "lines": 117
+    },
+    {
+      "id": "char_sandor",
+      "name": "Sandor",
+      "lines": 116
+    },
+    {
+      "id": "char_grey-worm",
+      "name": "Grey Worm",
+      "lines": 114
+    },
+    {
+      "id": "char_qyburn",
+      "name": "Qyburn",
+      "lines": 114
+    },
+    {
+      "id": "char_talisa",
+      "name": "Talisa",
+      "lines": 113
+    },
+    {
+      "id": "char_petyr-baelish",
+      "name": "Petyr Baelish",
+      "lines": 112
+    },
+    {
+      "id": "char_thoros",
+      "name": "Thoros",
+      "lines": 103
+    },
+    {
+      "id": "char_meera",
+      "name": "Meera",
+      "lines": 102
+    },
+    {
+      "id": "char_daenerys-targaryen",
+      "name": "Daenerys Targaryen",
+      "lines": 100
+    },
+    {
+      "id": "char_arya-stark",
+      "name": "Arya Stark",
+      "lines": 98
+    },
+    {
+      "id": "char_robert-baratheon",
+      "name": "Robert Baratheon",
+      "lines": 98
+    },
+    {
+      "id": "char_shireen",
+      "name": "Shireen",
+      "lines": 93
+    },
+    {
+      "id": "char_high-sparrow",
+      "name": "High Sparrow",
+      "lines": 92
+    },
+    {
+      "id": "char_robb-stark",
+      "name": "Robb Stark",
+      "lines": 91
+    },
+    {
+      "id": "char_samwell",
+      "name": "Samwell",
+      "lines": 91
+    },
+    {
+      "id": "char_jorah-mormont",
+      "name": "Jorah Mormont",
+      "lines": 90
+    },
+    {
+      "id": "char_roose",
+      "name": "Roose",
+      "lines": 90
+    },
+    {
+      "id": "char_grenn",
+      "name": "Grenn",
+      "lines": 87
+    },
+    {
+      "id": "char_sansa-stark",
+      "name": "Sansa Stark",
+      "lines": 87
+    },
+    {
+      "id": "char_man-2",
+      "name": "Man #2",
+      "lines": 84
+    },
+    {
+      "id": "char_beric",
+      "name": "Beric",
+      "lines": 84
+    },
+    {
+      "id": "char_jojen",
+      "name": "Jojen",
+      "lines": 78
+    },
+    {
+      "id": "char_euron",
+      "name": "Euron",
+      "lines": 78
+    },
+    {
+      "id": "char_ros",
+      "name": "Ros",
+      "lines": 74
+    },
+    {
+      "id": "char_loras",
+      "name": "Loras",
+      "lines": 74
+    },
+    {
+      "id": "char_hot-pie",
+      "name": "Hot Pie",
+      "lines": 73
+    },
+    {
+      "id": "char_cersei-baratheon",
+      "name": "Cersei Baratheon",
+      "lines": 69
+    },
+    {
+      "id": "char_theon-greyjoy",
+      "name": "Theon Greyjoy",
+      "lines": 67
+    },
+    {
+      "id": "char_barristan",
+      "name": "Barristan",
+      "lines": 67
+    },
+    {
+      "id": "char_walder",
+      "name": "Walder",
+      "lines": 66
+    },
+    {
+      "id": "char_pycelle",
+      "name": "Pycelle",
+      "lines": 65
+    },
+    {
+      "id": "char_lancel",
+      "name": "Lancel",
+      "lines": 65
+    },
+    {
+      "id": "char_mance",
+      "name": "Mance",
+      "lines": 65
+    },
+    {
+      "id": "char_jaime-lannister",
+      "name": "Jaime Lannister",
+      "lines": 64
+    },
+    {
+      "id": "char_ned",
+      "name": "Ned",
+      "lines": 63
+    },
+    {
+      "id": "char_locke",
+      "name": "Locke",
+      "lines": 62
+    },
+    {
+      "id": "char_ellaria",
+      "name": "Ellaria",
+      "lines": 61
+    },
+    {
+      "id": "char_sparrow",
+      "name": "Sparrow",
+      "lines": 61
+    },
+    {
+      "id": "char_samwell-tarly",
+      "name": "Samwell Tarly",
+      "lines": 60
+    },
+    {
+      "id": "char_marwyn",
+      "name": "Marwyn",
+      "lines": 56
+    },
+    {
+      "id": "char_renly",
+      "name": "Renly",
+      "lines": 53
+    },
+    {
+      "id": "char_luwin",
+      "name": "Luwin",
+      "lines": 52
+    },
+    {
+      "id": "char_janos",
+      "name": "Janos",
+      "lines": 51
+    },
+    {
+      "id": "char_joffrey-baratheon",
+      "name": "Joffrey Baratheon",
+      "lines": 50
+    },
+    {
+      "id": "char_viserys-targaryen",
+      "name": "Viserys Targaryen",
+      "lines": 50
+    },
+    {
+      "id": "char_ned-stark",
+      "name": "Ned Stark",
+      "lines": 50
+    },
+    {
+      "id": "char_brynden",
+      "name": "Brynden",
+      "lines": 50
+    },
+    {
+      "id": "char_hizdahr",
+      "name": "Hizdahr",
+      "lines": 50
+    },
+    {
+      "id": "char_alliser-thorne",
+      "name": "Alliser Thorne",
+      "lines": 47
+    },
+    {
+      "id": "char_edmure",
+      "name": "Edmure",
+      "lines": 47
+    },
+    {
+      "id": "char_waif",
+      "name": "Waif",
+      "lines": 46
+    },
+    {
+      "id": "char_renly-baratheon",
+      "name": "Renly Baratheon",
+      "lines": 45
+    },
+    {
+      "id": "char_selyse",
+      "name": "Selyse",
+      "lines": 45
+    },
+    {
+      "id": "char_lysa",
+      "name": "Lysa",
+      "lines": 45
+    },
+    {
+      "id": "char_myranda",
+      "name": "Myranda",
+      "lines": 44
+    },
+    {
+      "id": "char_lady-crane",
+      "name": "Lady Crane",
+      "lines": 44
+    }
+  ],
+  "episodeAnalytics": {
+    "mostViewed": [
+      {
+        "id": "episode_8_06",
+        "seasonId": "season_8",
+        "episodeNumber": 6,
+        "overallNumber": 73,
+        "title": "The Iron Throne",
+        "directedBy": "David Benioff & D. B. Weiss",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-05-05",
+        "viewersMillions": 13.6
+      },
+      {
+        "id": "episode_8_05",
+        "seasonId": "season_8",
+        "episodeNumber": 5,
+        "overallNumber": 72,
+        "title": "The Bells",
+        "directedBy": "Miguel Sapochnik",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-04-28",
+        "viewersMillions": 12.4
+      },
+      {
+        "id": "episode_7_07",
+        "seasonId": "season_7",
+        "episodeNumber": 7,
+        "overallNumber": 67,
+        "title": "The Dragon and the Wolf",
+        "directedBy": "Jeremy Podeswa",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-05-12",
+        "viewersMillions": 12.0
+      },
+      {
+        "id": "episode_8_03",
+        "seasonId": "season_8",
+        "episodeNumber": 3,
+        "overallNumber": 70,
+        "title": "The Long Night",
+        "directedBy": "Miguel Sapochnik",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-04-14",
+        "viewersMillions": 12.0
+      },
+      {
+        "id": "episode_8_04",
+        "seasonId": "season_8",
+        "episodeNumber": 4,
+        "overallNumber": 71,
+        "title": "The Last of the Starks",
+        "directedBy": "David Nutter",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-04-21",
+        "viewersMillions": 11.8
+      },
+      {
+        "id": "episode_8_01",
+        "seasonId": "season_8",
+        "episodeNumber": 1,
+        "overallNumber": 68,
+        "title": "Winterfell",
+        "directedBy": "David Nutter",
+        "writtenBy": "Dave Hill",
+        "airDate": "2013-03-31",
+        "viewersMillions": 11.7
+      },
+      {
+        "id": "episode_7_05",
+        "seasonId": "season_7",
+        "episodeNumber": 5,
+        "overallNumber": 65,
+        "title": "Eastwatch",
+        "directedBy": "Matt Shakman",
+        "writtenBy": "Dave Hill",
+        "airDate": "2013-04-28",
+        "viewersMillions": 10.7
+      },
+      {
+        "id": "episode_7_06",
+        "seasonId": "season_7",
+        "episodeNumber": 6,
+        "overallNumber": 66,
+        "title": "Beyond the Wall",
+        "directedBy": "Alan Taylor",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-05-05",
+        "viewersMillions": 10.2
+      },
+      {
+        "id": "episode_8_02",
+        "seasonId": "season_8",
+        "episodeNumber": 2,
+        "overallNumber": 69,
+        "title": "A Knight of the Seven Kingdoms",
+        "directedBy": "David Nutter",
+        "writtenBy": "Bryan Cogman",
+        "airDate": "2013-04-07",
+        "viewersMillions": 10.2
+      },
+      {
+        "id": "episode_7_01",
+        "seasonId": "season_7",
+        "episodeNumber": 1,
+        "overallNumber": 61,
+        "title": "Dragonstone",
+        "directedBy": "Jeremy Podeswa",
+        "writtenBy": "David Benioff & D. B. Weiss",
+        "airDate": "2013-03-31",
+        "viewersMillions": 10.1
+      }
+    ]
+  }
+}

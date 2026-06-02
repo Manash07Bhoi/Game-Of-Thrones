@@ -1,0 +1,137 @@
+[
+  {
+    "id": "loc_golden-tooth",
+    "name": "Golden Tooth",
+    "region": "The Westerlands"
+  },
+  {
+    "id": "loc_mummer-s-ford",
+    "name": "Mummer's Ford",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_riverrun",
+    "name": "Riverrun",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_green-fork",
+    "name": "Green Fork",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_whispering-wood",
+    "name": "Whispering Wood",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_darry",
+    "name": "Darry",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_moat-cailin",
+    "name": "Moat Cailin",
+    "region": "The North"
+  },
+  {
+    "id": "loc_deepwood-motte",
+    "name": "Deepwood Motte",
+    "region": "The North"
+  },
+  {
+    "id": "loc_stony-shore",
+    "name": "Stony Shore",
+    "region": "The North"
+  },
+  {
+    "id": "loc_torrhen-s-square",
+    "name": "Torrhen's Square",
+    "region": "The North"
+  },
+  {
+    "id": "loc_winterfell",
+    "name": "Winterfell",
+    "region": "The North"
+  },
+  {
+    "id": "loc_oxcross",
+    "name": "Oxcross",
+    "region": "The Westerlands"
+  },
+  {
+    "id": "loc_storm-s-end",
+    "name": "Storm's End",
+    "region": "The Stormlands"
+  },
+  {
+    "id": "loc_red-fork",
+    "name": "Red Fork",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_harrenhal",
+    "name": "Harrenhal",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_crag",
+    "name": "Crag",
+    "region": "The Westerlands"
+  },
+  {
+    "id": "loc_king-s-landing",
+    "name": "King's Landing",
+    "region": "The Crownlands"
+  },
+  {
+    "id": "loc_duskendale",
+    "name": "Duskendale",
+    "region": "The Crownlands"
+  },
+  {
+    "id": "loc_ruby-ford",
+    "name": "Ruby Ford",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_the-twins",
+    "name": "The Twins",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_seagard",
+    "name": "Seagard",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_castle-black",
+    "name": "Castle Black",
+    "region": "Beyond the Wall"
+  },
+  {
+    "id": "loc_saltpans",
+    "name": "Saltpans",
+    "region": "The Riverlands"
+  },
+  {
+    "id": "loc_shield-islands",
+    "name": "Shield Islands",
+    "region": "The Reach"
+  },
+  {
+    "id": "loc_ryamsport-vinetown-starfish-harbor",
+    "name": "Ryamsport, Vinetown, Starfish Harbor",
+    "region": "The Reach"
+  },
+  {
+    "id": "loc_dragonstone",
+    "name": "Dragonstone",
+    "region": "The Stormlands"
+  },
+  {
+    "id": "loc_raventree",
+    "name": "Raventree",
+    "region": "The Riverlands"
+  }
+]
