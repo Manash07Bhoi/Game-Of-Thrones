@@ -39,13 +39,39 @@ const CharacterCard = ({ character, index }) => {
 
         <div className="char-card-back" style={{ borderColor: character.accent }}>
           <div className="char-back-content">
-            <span className="char-quote">"{character.quote}"</span>
-            <div className="got-divider" style={{ margin: '16px 0' }}>
+            <span className="char-full-title">{character.fullTitle}</span>
+            <span className="char-allegiance"><strong>Allegiance:</strong> {character.allegiance}</span>
+            <span className="char-status"><strong>Status:</strong> {character.status}</span>
+
+            <div className="got-divider" style={{ margin: '12px 0' }}>
               <span className="got-divider-line" />
               <span className="got-divider-diamond" />
               <span className="got-divider-line right" />
             </div>
-            <p className="char-desc">{character.description}</p>
+
+            <p className="char-bio">{character.biography}</p>
+
+            <div className="char-extra">
+              <strong>Key Achievements:</strong>
+              <ul>
+                {character.achievements.map((ach, idx) => <li key={idx}>{ach}</li>)}
+              </ul>
+            </div>
+
+            {character.relationships && (
+              <div className="char-extra" style={{ marginTop: '12px' }}>
+                <strong>Relationships:</strong>
+                <ul>
+                  {character.relationships.map((rel, idx) => <li key={idx}>{rel}</li>)}
+                </ul>
+              </div>
+            )}
+
+            <div className="got-divider" style={{ margin: '12px 0' }}>
+              <span className="got-divider-diamond" />
+            </div>
+
+            <span className="char-quote">"{character.quote}"</span>
           </div>
         </div>
       </div>
