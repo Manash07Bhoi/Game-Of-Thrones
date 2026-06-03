@@ -1,0 +1,2 @@
+# Deployment Guide
+The project relies on Vite. The base path in `vite.config.js` *must* match the GitHub repository name. Pushing to `main` triggers a GitHub Action (`.github/workflows/deploy.yml`) which runs `npm ci` and `npm run build`, and then publishes the `dist/` directory to GitHub Pages via the `actions/deploy-pages` step. Ensure the repository's Pages setting is configured to "GitHub Actions".
