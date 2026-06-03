@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import './CharacterCard.css'
 
 const CharacterCard = ({ character, index }) => {
@@ -21,8 +22,9 @@ const CharacterCard = ({ character, index }) => {
   }, [index])
 
   return (
-    <div ref={cardRef} className="char-card">
-      <div className="char-card-inner">
+    <Link to={`/characters/${character.id}`} style={{ textDecoration: 'none' }}>
+      <div ref={cardRef} className="char-card">
+        <div className="char-card-inner">
         <div className="char-card-front">
           <div className="char-image-wrap">
             <div className="char-image-fallback" style={{ background: character.bg }}>
@@ -71,11 +73,14 @@ const CharacterCard = ({ character, index }) => {
               <span className="got-divider-diamond" />
             </div>
 
-            <span className="char-quote">"{character.quote}"</span>
+              <span className="char-quote">"{character.quote}"</span>
+
+              <div style={{ marginTop: '16px', color: 'var(--gold-dim)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Click to view profile &rarr;</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

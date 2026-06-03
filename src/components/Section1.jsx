@@ -1,11 +1,18 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import HouseCard from './HouseCard'
 import SectionHeader from './SectionHeader'
-import { HOUSES_DATA } from '../content/housesContent'
+import { getHouses } from '../services/contentService'
 import './Section1.css'
 
 const Section1 = () => {
   const sectionRef = useRef(null)
+  const [houses, setHouses] = useState([])
+
+  useEffect(() => {
+    getHouses().then(data => {
+      setHouses(data.slice(0, 6))
+    })
+  }, [])
 
   return (
     <section ref={sectionRef} className="section1">
@@ -24,9 +31,11 @@ const Section1 = () => {
 
       {/* Houses grid */}
       <div className="houses-grid">
-        {HOUSES_DATA.slice(0, 6).map((house, i) => (
+        {houses.length > 0 ? houses.map((house, i) => (
           <HouseCard key={house.id} house={house} index={i} />
-        ))}
+        )) : (
+          <div style={{ textAlign: 'center', color: 'var(--gold)', gridColumn: '1 / -1' }}>Consulting the Citadel...</div>
+        )}
       </div>
 
       {/* Section footer ornament */}
