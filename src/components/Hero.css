@@ -96,11 +96,12 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 48px;
+  padding: 32px 56px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
 }
 
 .got-nav-logo {
@@ -129,6 +130,78 @@ body {
 
 .got-nav-links li a:hover {
   color: var(--gold-light);
+  text-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+}
+
+/* ── Mobile Nav Menu ── */
+.got-mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 50;
+}
+
+.menu-icon-line {
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+  transition: 0.3s;
+}
+
+.got-mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.got-mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.got-mobile-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.got-mobile-links li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.got-mobile-menu-overlay.open .got-mobile-links li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.got-mobile-links li a {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 0.4em;
+  color: var(--parchment);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.got-mobile-links li a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 15px rgba(201, 168, 76, 0.5);
 }
 
 /* ── Decorative divider ── */
@@ -212,46 +285,73 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-top: 36px;
+  margin-top: 40px;
 }
 
 .got-cta-btn {
+  position: relative;
   font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--ink);
   background: var(--gold);
   border: none;
-  padding: 14px 32px;
+  padding: 16px 36px;
   cursor: pointer;
-  position: relative;
   overflow: hidden;
-  transition: background 0.3s, color 0.3s;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: all 0.4s ease;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.2);
+}
+
+.cta-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  transition: none;
 }
 
 .got-cta-btn:hover {
   background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+}
+
+.got-cta-btn:hover .cta-glow {
+  animation: shine 0.6s ease-out;
+}
+
+@keyframes shine {
+  100% { left: 200%; }
 }
 
 .got-cta-ghost {
+  position: relative;
   font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--gold);
-  background: transparent;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
   border: 1px solid var(--gold-dim);
-  padding: 13px 28px;
+  padding: 15px 32px;
   cursor: pointer;
-  transition: border-color 0.3s, color 0.3s;
-  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  transition: all 0.4s ease;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
 }
 
 .got-cta-ghost:hover {
+  background: rgba(201, 168, 76, 0.1);
   border-color: var(--gold);
   color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
 /* ── Right side vertical panel ── */
@@ -418,8 +518,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+  gap: 28px;
+  transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 
 .got-loading.hidden {
@@ -430,38 +530,47 @@ body {
 
 .got-loading-logo {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 22px;
-  color: var(--gold);
-  letter-spacing: 0.2em;
+  font-size: 26px;
+  color: var(--parchment);
+  letter-spacing: 0.25em;
   text-align: center;
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+  animation: pulse-logo 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-logo {
+  from { text-shadow: 0 0 10px rgba(201, 168, 76, 0.2); }
+  to   { text-shadow: 0 0 30px rgba(201, 168, 76, 0.6); }
 }
 
 .got-loading-sub {
   font-family: 'Cinzel', serif;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.6em;
   color: var(--gold-dim);
   text-transform: uppercase;
 }
 
 .got-loading-bar-wrap {
-  width: 160px;
+  width: 200px;
   height: 1px;
-  background: rgba(201, 168, 76, 0.2);
+  background: rgba(201, 168, 76, 0.15);
   position: relative;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .got-loading-bar-fill {
   position: absolute;
   inset: 0;
-  background: var(--gold);
-  animation: load-fill 2s ease forwards;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  animation: load-fill 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  width: 50%;
 }
 
 @keyframes load-fill {
-  from { width: 0; }
-  to   { width: 100%; }
+  0%   { left: -50%; }
+  100% { left: 100%; }
 }
 
 /* ── Responsive ── */
@@ -469,9 +578,12 @@ body {
   .got-content        { padding: 0 28px 80px; }
   .got-nav            { padding: 20px 28px; }
   .got-nav-links      { display: none; }
+  .got-mobile-menu-btn { display: flex; }
   .got-right-panel    { right: 20px; }
   .got-scroll-hint    { display: none; }
   .got-rune-bar       { left: 28px; right: 28px; }
   .got-corner         { display: none; }
   .got-title          { font-size: 28px; }
+  .got-cta-row        { flex-direction: column; align-items: stretch; gap: 16px; }
+  .got-cta-btn, .got-cta-ghost { text-align: center; }
 }

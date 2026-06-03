@@ -237,7 +237,8 @@ const Section1 = () => {
           <em>Houses</em>
         </h1>
         <p className="section1-subtitle fade-up">
-          Seven kingdoms. Six great houses. One Iron Throne.
+          Seven Kingdoms. Centuries of blood. One Iron Throne.<br/>
+          Explore the noble bloodlines that shape the realm.
         </p>
       </header>
 
