@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import SectionHeader from '../components/SectionHeader'
-import { LORE_DATA } from '../content/loreContent'
+import { getLore } from '../services/contentService'
 
 const LoreSection = ({ item, index }) => {
   const sectionRef = useRef(null)
@@ -41,8 +41,15 @@ const LoreSection = ({ item, index }) => {
 }
 
 const Lore = () => {
+  const [lore, setLore] = useState([])
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    getLore().then(data => {
+      setLore(data)
+      setLoading(false)
+    })
   }, [])
 
   return (
@@ -53,11 +60,15 @@ const Lore = () => {
         subtitle="Discover the deep history, major regions, and atmospheric storytelling of the Seven Kingdoms."
         rune="♜"
       />
-      <div style={{ maxWidth: '900px', margin: '60px auto', padding: '0 40px' }}>
-        {LORE_DATA.map((item, idx) => (
-          <LoreSection key={item.id} item={item} index={idx} />
-        ))}
-      </div>
+      {loading ? (
+        <div style={{ textAlign: 'center', color: 'var(--gold)', marginTop: '40px' }}>Consulting ancient texts...</div>
+      ) : (
+        <div style={{ maxWidth: '900px', margin: '60px auto', padding: '0 40px' }}>
+          {lore.map((item, idx) => (
+            <LoreSection key={item.id} item={item} index={idx} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

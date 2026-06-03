@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const HouseCard = ({ house, index }) => {
   const cardRef   = useRef(null)
@@ -38,14 +39,18 @@ const HouseCard = ({ house, index }) => {
   }
 
   return (
-    <div
-      ref={cardRef}
-      className={`house-card house-card--${house.id}`}
-      style={{ '--accent': house.accent, '--border': house.borderColor, background: house.bg }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
+    <Link
+      to={`/houses/${house.id}`}
+      style={{ textDecoration: 'none' }}
     >
+      <div
+        ref={cardRef}
+        className={`house-card house-card--${house.id}`}
+        style={{ '--accent': house.accent, '--border': house.borderColor, background: house.bg }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
+      >
       {/* Corner ornaments */}
       <span className="corner corner-tl" />
       <span className="corner corner-tr" />
@@ -95,9 +100,10 @@ const HouseCard = ({ house, index }) => {
         <p className="hover-desc">{house.description}</p>
       </div>
 
-      {/* Bottom accent bar */}
-      <div className="card-accent-bar" />
-    </div>
+        {/* Bottom accent bar */}
+        <div className="card-accent-bar" />
+      </div>
+    </Link>
   )
 }
 

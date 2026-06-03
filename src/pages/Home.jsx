@@ -1,13 +1,21 @@
+import { useEffect, useState } from 'react'
 import Hero from '../components/Hero'
 import Section1 from '../components/Section1'
 import SectionHeader from '../components/SectionHeader'
 import CharacterCard from '../components/CharacterCard'
 import BattleCard from '../components/BattleCard'
-import { CHARACTERS_DATA } from '../content/charactersContent'
-import { BATTLES_DATA } from '../content/battlesContent'
+import { getCharacters, getBattles } from '../services/contentService'
 import './Home.css'
 
 const Home = () => {
+  const [characters, setCharacters] = useState([])
+  const [battles, setBattles] = useState([])
+
+  useEffect(() => {
+    getCharacters().then(data => setCharacters(data.slice(0, 4)))
+    getBattles().then(data => setBattles(data.slice(0, 3)))
+  }, [])
+
   return (
     <div className="home-page">
       <Hero />
@@ -23,9 +31,11 @@ const Home = () => {
           rune="♔"
         />
         <div className="characters-grid">
-          {CHARACTERS_DATA.slice(0, 4).map((char, i) => (
-            <CharacterCard key={char.name} character={char} index={i} />
-          ))}
+          {characters.length > 0 ? characters.map((char, i) => (
+            <CharacterCard key={char.id} character={char} index={i} />
+          )) : (
+            <div style={{ textAlign: 'center', color: 'var(--gold)', gridColumn: '1 / -1' }}>Fetching from Maester's Archives...</div>
+          )}
         </div>
       </section>
 
@@ -38,9 +48,11 @@ const Home = () => {
           rune="⚔"
         />
         <div className="battles-grid">
-          {BATTLES_DATA.slice(0, 3).map((battle, i) => (
-            <BattleCard key={battle.name} battle={battle} index={i} />
-          ))}
+          {battles.length > 0 ? battles.map((battle, i) => (
+            <BattleCard key={battle.id} battle={battle} index={i} />
+          )) : (
+            <div style={{ textAlign: 'center', color: 'var(--gold)', gridColumn: '1 / -1' }}>Unearthing war records...</div>
+          )}
         </div>
       </section>
 

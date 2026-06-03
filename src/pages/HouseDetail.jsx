@@ -1,0 +1,47 @@
+import { useEffect, useState } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import { getHouseById } from '../services/contentService'
+
+const HouseDetail = () => {
+  const { id } = useParams()
+  const [house, setHouse] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    getHouseById(id).then(data => {
+      setHouse(data)
+      setLoading(false)
+    })
+  }, [id])
+
+  if (loading) return <div style={{ paddingTop: '120px', minHeight: '100vh', color: 'var(--gold)', textAlign: 'center' }}>Loading...</div>
+  if (!house) return <div style={{ paddingTop: '120px', minHeight: '100vh', color: 'var(--ash)', textAlign: 'center' }}>House not found.</div>
+
+  return (
+    <div className="page-transition" style={{ paddingTop: '120px', background: '#000', minHeight: '100vh', paddingBottom: '100px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+        <Link to="/houses" style={{ color: 'var(--gold-dim)', textDecoration: 'none', textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.2em' }}>&larr; Back to Houses</Link>
+
+        <div style={{ marginTop: '40px', textAlign: 'center' }}>
+          <img src={`${import.meta.env.BASE_URL}${house.sigil_url}`} alt={house.name} style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', border: `2px solid ${house.accent}`, marginBottom: '24px' }} />
+          <h1 style={{ fontFamily: 'Cinzel Decorative', fontSize: '56px', color: 'var(--parchment)', marginBottom: '8px' }}>House {house.name}</h1>
+          <h2 style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', fontSize: '20px', color: 'var(--gold)', marginBottom: '40px' }}>{house.words}</h2>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px', textAlign: 'center', fontFamily: 'Cinzel', fontSize: '12px', color: 'var(--ash)', textTransform: 'uppercase', marginBottom: '48px', borderTop: '1px solid var(--gold-dim)', borderBottom: '1px solid var(--gold-dim)', padding: '24px 0' }}>
+          <p><strong>Seat</strong><br/><span style={{ color: 'var(--parchment)' }}>{house.seat}</span></p>
+          <p><strong>Region</strong><br/><span style={{ color: 'var(--parchment)' }}>{house.region}</span></p>
+          <p><strong>Founder</strong><br/><span style={{ color: 'var(--parchment)' }}>{house.founder}</span></p>
+        </div>
+
+        <p style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'var(--ash)', lineHeight: '1.8', marginBottom: '48px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 48px auto' }}>
+          {house.history}
+        </p>
+
+      </div>
+    </div>
+  )
+}
+
+export default HouseDetail

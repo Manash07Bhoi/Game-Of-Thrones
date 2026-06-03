@@ -1,11 +1,18 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import BattleCard from '../components/BattleCard'
 import SectionHeader from '../components/SectionHeader'
-import { BATTLES_DATA } from '../content/battlesContent'
+import { getBattles } from '../services/contentService'
 
 const Battles = () => {
+  const [battles, setBattles] = useState([])
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    getBattles().then(data => {
+      setBattles(data)
+      setLoading(false)
+    })
   }, [])
 
   return (
@@ -16,11 +23,15 @@ const Battles = () => {
         subtitle="Where crowns are won, dynasties shattered, and history is written in blood."
         rune="⚔"
       />
-      <div className="battles-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-        {BATTLES_DATA.map((battle, i) => (
-          <BattleCard key={battle.id} battle={battle} index={i} />
-        ))}
-      </div>
+      {loading ? (
+        <div style={{ textAlign: 'center', color: 'var(--gold)', marginTop: '40px' }}>Unearthing war records...</div>
+      ) : (
+        <div className="battles-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          {battles.map((battle, i) => (
+            <BattleCard key={battle.id} battle={battle} index={i} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
