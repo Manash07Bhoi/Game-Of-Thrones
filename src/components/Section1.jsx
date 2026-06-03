@@ -13,7 +13,7 @@ const HOUSES = [
     accent: '#8fafc4',
     description:
       'Wardens of the North, the Starks trace their blood to the First Men. Honour is their sword and the frozen wind their banner. They endure where others fall — patient as winter itself.',
-    sigil_url: '/images/one.jpg',
+    sigil_url: `${import.meta.env.BASE_URL}images/one.jpg`,
     bg: 'linear-gradient(135deg, #0d1117 0%, #1a2332 60%, #0d1117 100%)',
     borderColor: '#4a6380',
   },
@@ -28,7 +28,7 @@ const HOUSES = [
     accent: '#d4a84b',
     description:
       'The wealthiest house in Westeros. Their lion does not merely roar — it devours. Power is their birthright, gold their language, and debt a weapon they wield with surgical precision.',
-    sigil_url: '/images/two.jpg',
+    sigil_url: `${import.meta.env.BASE_URL}images/two.jpg`,
     bg: 'linear-gradient(135deg, #1a1200 0%, #2a1f00 60%, #1a1200 100%)',
     borderColor: '#7a6130',
   },
@@ -43,7 +43,7 @@ const HOUSES = [
     accent: '#c0392b',
     description:
       'Blood of Old Valyria. They did not conquer Westeros — they burned it into submission. Dragon riders, dynasty builders, and the last of a world consumed by fire.',
-    sigil_url: '/images/three.png',
+    sigil_url: `${import.meta.env.BASE_URL}images/three.png`,
     bg: 'linear-gradient(135deg, #1a0000 0%, #2d0a0a 60%, #1a0000 100%)',
     borderColor: '#7a1a1a',
   },
@@ -58,7 +58,7 @@ const HOUSES = [
     accent: '#c9a84c',
     description:
       'Born of storms, tempered by battle. The Baratheons seized the Iron Throne not through cunning but through iron will and a war hammer. Fury is not their weakness — it is their crown.',
-    sigil_url: '/images/four.webp',
+    sigil_url: `${import.meta.env.BASE_URL}images/four.webp`,
     bg: 'linear-gradient(135deg, #0a0a00 0%, #1f1c00 60%, #0a0a00 100%)',
     borderColor: '#5a5020',
   },
@@ -73,7 +73,7 @@ const HOUSES = [
     accent: '#b8a040',
     description:
       'Reavers of the sea. Iron men who bow to no king but the Drowned God. What they cannot make, they take. What they cannot take, they burn. The sea is their kingdom — all else is plunder.',
-    sigil_url: '/images/five.jpg',
+    sigil_url: `${import.meta.env.BASE_URL}images/five.jpg`,
     bg: 'linear-gradient(135deg, #050810 0%, #0a1020 60%, #050810 100%)',
     borderColor: '#3a4a5a',
   },
@@ -88,7 +88,7 @@ const HOUSES = [
     accent: '#5a9e48',
     description:
       'The richest lords of the Reach, whose roses feed the realm. Behind beauty and abundance lies a house of ruthless ambition — growing strong in gardens, and stronger still in schemes.',
-    sigil_url: '/images/six.jpg',
+    sigil_url: `${import.meta.env.BASE_URL}images/six.jpg`,
     bg: 'linear-gradient(135deg, #030a00 0%, #0a1800 60%, #030a00 100%)',
     borderColor: '#2a4a20',
   },

@@ -254,7 +254,7 @@ const Hero = () => {
           <video
             ref={videoRef}
             className="got-video"
-            src="/video/one.mp4"
+            src={`${import.meta.env.BASE_URL}video/one.mp4`}
             playsInline
             muted
             preload="auto"
