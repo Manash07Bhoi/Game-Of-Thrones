@@ -28,19 +28,56 @@ const BattleCard = ({ battle, index }) => {
       padding: '32px',
       background: 'linear-gradient(135deg, rgba(20,20,20,0.9) 0%, rgba(5,5,5,0.9) 100%)',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column'
     }}>
-      <div style={{ position: 'relative', zIndex: 2 }}>
+      <div style={{ position: 'relative', zIndex: 2, flex: 1 }}>
         <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '24px', marginBottom: '8px' }}>{battle.name}</h3>
         <p style={{ fontFamily: 'Cinzel', fontSize: '10px', color: 'var(--gold)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '20px' }}>{battle.location} &bull; {battle.year}</p>
-        <p style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', color: 'var(--ash)', fontSize: '15px', lineHeight: '1.6' }}>{battle.description}</p>
+        <p style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', color: 'var(--ash)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px' }}>{battle.background}</p>
+
+        {battle.commanders && (
+          <div style={{ marginBottom: '12px' }}>
+            <span style={{ fontFamily: 'Cinzel', fontSize: '9px', color: 'var(--gold)', textTransform: 'uppercase' }}>Commanders: </span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--parchment)' }}>{battle.commanders.join(', ')}</span>
+          </div>
+        )}
+
+        {battle.participants && (
+          <div style={{ marginBottom: '12px' }}>
+            <span style={{ fontFamily: 'Cinzel', fontSize: '9px', color: 'var(--gold)', textTransform: 'uppercase' }}>Participants: </span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--ash)' }}>{battle.participants.join(', ')}</span>
+          </div>
+        )}
+
+        {battle.outcome && (
+          <div style={{ marginBottom: '16px', padding: '12px', background: 'rgba(201, 168, 76, 0.05)', borderLeft: '2px solid var(--gold)' }}>
+            <span style={{ fontFamily: 'Cinzel', fontSize: '10px', color: 'var(--gold)', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>Outcome</span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '14px', color: 'var(--ash)' }}>{battle.outcome}</span>
+          </div>
+        )}
+
+        {battle.significance && (
+          <div style={{ marginBottom: '12px' }}>
+            <span style={{ fontFamily: 'Cinzel', fontSize: '9px', color: 'var(--gold)', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>Strategic Significance</span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--ash)' }}>{battle.significance}</span>
+          </div>
+        )}
+
+        {battle.legacy && (
+          <div style={{ marginBottom: '12px' }}>
+            <span style={{ fontFamily: 'Cinzel', fontSize: '9px', color: 'var(--gold)', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>Legacy</span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--ash)' }}>{battle.legacy}</span>
+          </div>
+        )}
       </div>
       <div style={{
         position: 'absolute',
-        top: '-20%',
+        top: '-10%',
         right: '-10%',
         fontSize: '180px',
-        opacity: 0.03,
+        opacity: 0.02,
         color: 'var(--gold)',
         pointerEvents: 'none',
         transform: 'rotate(15deg)'
