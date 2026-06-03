@@ -79,7 +79,6 @@ const Hero = () => {
 
   const [activeChapter, setActiveChapter] = useState(0)
   const [videoReady, setVideoReady]       = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // ─── Chapter transition ───────────────────────────────────────────────────
   const prevChapter = useRef(-1)
@@ -277,31 +276,6 @@ const Hero = () => {
             </div>
           ))}
 
-          {/* Nav */}
-          <nav className="got-nav">
-            <div className="got-nav-logo">Game of Thrones</div>
-            <ul className="got-nav-links">
-              {['The Realm','Great Houses','Lore','History'].map(l => (
-                <li key={l}><a href="#0">{l}</a></li>
-              ))}
-            </ul>
-            <button className="got-mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              <span className="menu-icon-line"></span>
-              <span className="menu-icon-line"></span>
-              <span className="menu-icon-line"></span>
-            </button>
-          </nav>
-
-          {/* Mobile Nav Overlay */}
-          <div className={`got-mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>
-            <ul className="got-mobile-links">
-              {['The Realm','Great Houses','Lore','History'].map((l, i) => (
-                <li key={l} style={{ transitionDelay: `${i * 0.1}s` }}>
-                  <a href="#0" onClick={() => setMobileMenuOpen(false)}>{l}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Rune bar */}
           <div ref={runeBarRef} className="got-rune-bar">

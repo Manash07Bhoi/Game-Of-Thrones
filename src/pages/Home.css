@@ -1,0 +1,48 @@
+.home-page {
+  background: #000;
+}
+
+.section-characters,
+.section-battles {
+  position: relative;
+  padding: 100px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(30, 25, 15, 0.2) 0%, #000 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section-characters > *,
+.section-battles > * {
+  position: relative;
+  z-index: 2;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.battles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .characters-grid { grid-template-columns: repeat(2, 1fr); }
+  .battles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .section-characters, .section-battles { padding: 80px 24px; }
+  .characters-grid { grid-template-columns: 1fr; }
+  .battles-grid { grid-template-columns: 1fr; }
+}
