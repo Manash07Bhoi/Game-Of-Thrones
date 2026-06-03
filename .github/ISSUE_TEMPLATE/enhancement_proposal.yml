@@ -1,0 +1,24 @@
+name: Enhancement Proposal
+description: Propose architectural, performance, or UI enhancements
+title: "[ENHANCEMENT] "
+labels: enhancement
+assignees: ''
+
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for proposing an enhancement to the project!
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Description of the Proposal
+      description: Clearly describe the enhancement and why it is beneficial.
+    validations:
+      required: true
+  - type: textarea
+    id: architecture
+    attributes:
+      label: Architectural Impact
+      description: Will this require changes to the Service Layer, Routing, or Data Merging logic?
+    validations:
+      required: false

@@ -1,0 +1,2 @@
+# Project Overview
+The Game of Thrones Westeros Portal is a modern, responsive single-page application designed to provide a premium, cinematic exploration of the lore, battles, characters, and houses of Westeros. It prioritizes high-fidelity visual storytelling, seamless routing, and robust data fallback mechanisms.
