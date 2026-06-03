@@ -2,6 +2,8 @@
 
 An immersive, premium cinematic web experience dedicated to the world of *A Song of Ice and Fire*. This single-page application (SPA) serves as a deep dive into the great houses, legendary characters, epic battles, and ancient lore of the Seven Kingdoms.
 
+**Created and Developed by Roshan.**
+
 ## Features
 * **Premium UI/UX:** Cinematic fade-ins, scroll-reveal interactions, GSAP-driven hero sections, and immersive typography.
 * **Service-Oriented Architecture:** Abstracted data layer safely merging live API responses with local JSON and static fallback content.
@@ -50,6 +52,9 @@ Contributions are welcome! Please read `docs/CONTRIBUTING.md` before submitting 
 
 ## Disclaimer
 This project is a fan-made portfolio piece. All data, characters, and lore are the intellectual property of George R.R. Martin and HBO. No copyright infringement is intended.
+
+## Credits
+**Created and Developed by Roshan.**
 
 ## License
 MIT License. See [LICENSE](LICENSE) for more information.

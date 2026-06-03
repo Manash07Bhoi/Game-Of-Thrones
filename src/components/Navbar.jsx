@@ -55,7 +55,12 @@ const Navbar = () => {
           <li><NavLink to="/characters" className={({isActive}) => isActive ? 'active' : ''}>Characters</NavLink></li>
           <li><NavLink to="/battles" className={({isActive}) => isActive ? 'active' : ''}>History</NavLink></li>
         </ul>
-        <button className={`got-mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button
+          className={`got-mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
+        >
           <span className="menu-icon-line"></span>
           <span className="menu-icon-line"></span>
           <span className="menu-icon-line"></span>
@@ -63,7 +68,15 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Nav Overlay */}
-      <div className={`got-mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}>
+      <div
+        className={`got-mobile-menu-overlay ${mobileMenuOpen ? 'open' : ''}`}
+        onClick={(e) => {
+          // Close menu if clicking strictly on the overlay background
+          if (e.target === e.currentTarget) {
+            setMobileMenuOpen(false)
+          }
+        }}
+      >
         <ul className="got-mobile-links">
           {[
             { label: 'The Realm', path: '/lore' },
