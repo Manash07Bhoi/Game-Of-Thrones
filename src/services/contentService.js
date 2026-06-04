@@ -105,3 +105,6 @@ export const getSeasons = async () => fetchLocalJSON('seasons.json');
 export const getLocations = async () => fetchLocalJSON('locations.json');
 export const getAnalytics = async () => fetchLocalJSON('analytics.json');
 export const getSearchIndex = async () => fetchLocalJSON('search-index.json');
+
+export const getScriptIndex = async () => fetchLocalJSON('script-lines-index.json');
+export const getSeasonScript = async (seasonNumber) => fetchLocalJSON(`script-lines/season-${seasonNumber}.json`);

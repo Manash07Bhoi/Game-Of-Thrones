@@ -15,10 +15,12 @@ export const mergeCharacterData = (baseContent, apiChar, localData) => {
     isAlive: localData?.isAlive ?? null,
 
     // Aesthetic Fallbacks
-    biography: baseContent?.biography || `A character residing in the Seven Kingdoms.`,
+    biography: baseContent?.biography ||
+      (localData?.houseId ? `A sworn member or affiliate of ${localData.houseId.replace('house_house-', 'House ').replace(/-/g, ' ')}. ` : '') +
+      (localData?.spokenLineCount > 0 ? `This character appears in the recorded histories, speaking ${localData.spokenLineCount} times during the events of the wars to come.` : `A character residing in the Seven Kingdoms during the tumultuous wars for the Iron Throne.`),
     achievements: baseContent?.achievements || [],
     relationships: baseContent?.relationships || [],
-    quote: baseContent?.quote || '',
+    quote: baseContent?.quote || (localData?.spokenLineCount > 0 ? "Their words are recorded in the annals of history." : ''),
     bg: baseContent?.bg || defaultBg,
     accent: baseContent?.accent || defaultAccent,
     sigilIcon: baseContent?.sigilIcon || '♔'

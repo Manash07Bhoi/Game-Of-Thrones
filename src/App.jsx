@@ -9,9 +9,12 @@ import Battles from './pages/Battles'
 import BattleDetail from './pages/BattleDetail'
 import Lore from './pages/Lore'
 import Episodes from './pages/Episodes'
+import EpisodeDetail from './pages/EpisodeDetail'
 import Seasons from './pages/Seasons'
 import Locations from './pages/Locations'
 import Analytics from './pages/Analytics'
+import DataDashboard from './pages/DataDashboard'
+import Scripts from './pages/Scripts'
 import './App.css'
 
 function App() {
@@ -33,9 +36,12 @@ function App() {
         <Route path="/lore" element={<Lore />} />
 
         <Route path="/episodes" element={<Episodes />} />
+        <Route path="/episodes/:id" element={<EpisodeDetail />} />
         <Route path="/seasons" element={<Seasons />} />
         <Route path="/locations" element={<Locations />} />
         <Route path="/analytics" element={<Analytics />} />
+        <Route path="/data" element={<DataDashboard />} />
+        <Route path="/scripts" element={<Scripts />} />
       </Routes>
     </Router>
   )
