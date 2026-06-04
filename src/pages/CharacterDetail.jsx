@@ -59,9 +59,13 @@ const CharacterDetail = () => {
               <p><strong>Status:</strong> <br/><span style={{ color: character.isAlive === false ? 'var(--blood)' : 'var(--gold)' }}>{character.isAlive === false ? 'Deceased' : (character.status || 'Unknown')}</span></p>
             </div>
 
-            <div style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'var(--ash)', lineHeight: '1.8', marginBottom: '40px' }}>
-              <p>{character.biography}</p>
-            </div>
+            {character.biography ? (
+              <div style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'var(--ash)', lineHeight: '1.8', marginBottom: '40px' }}>
+                <p>{character.biography}</p>
+              </div>
+            ) : (
+              <p style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'rgba(255,255,255,0.2)', fontStyle: 'italic', marginBottom: '40px' }}>Biography unavailable.</p>
+            )}
 
             {character.quote && (
               <blockquote style={{ fontFamily: 'Cinzel Decorative', fontSize: '20px', color: 'var(--gold)', borderLeft: `2px solid ${character.accent}`, paddingLeft: '24px', fontStyle: 'italic', marginBottom: '40px', background: 'linear-gradient(to right, rgba(201,168,76,0.05), transparent)', padding: '24px' }}>

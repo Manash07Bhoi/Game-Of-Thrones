@@ -1,7 +1,3 @@
-import { CHARACTERS_DATA } from '../content/charactersContent';
-import { HOUSES_DATA } from '../content/housesContent';
-import { BATTLES_DATA } from '../content/battlesContent';
-import { LORE_DATA } from '../content/loreContent';
 import { fetchThronesCharacters } from './thronesApi';
 import { fetchIceAndFireHouses } from './iceAndFireApi';
 import { mergeCharacterData, mergeHouseData, mergeBattleData } from './mergeService';
@@ -33,18 +29,16 @@ export const getCharacters = async () => {
         c.firstName.toLowerCase() === localChar.name.toLowerCase()
       ) : null;
 
-      // Find matching static data (for legendary profiles)
-      const baseChar = CHARACTERS_DATA.find(c => c.name.toLowerCase() === localChar.name.toLowerCase()) || null;
-
-      return mergeCharacterData(baseChar, apiChar, localChar);
+      return mergeCharacterData(null, apiChar, localChar);
     });
   }
 
   // Pure fallback if python dataset fails entirely
-  return CHARACTERS_DATA.map(baseChar => {
-    const apiChar = apiChars ? apiChars.find(c => c.fullName.includes(baseChar.name)) : null;
-    return mergeCharacterData(baseChar, apiChar, null);
-  });
+  if (apiChars && apiChars.length > 0) {
+    return apiChars.map(apiChar => mergeCharacterData(null, apiChar, null));
+  }
+
+  return [];
 };
 
 export const getCharacterById = async (id) => {
@@ -58,17 +52,22 @@ export const getHouses = async () => {
     fetchLocalJSON('houses.json')
   ]);
 
-  // Map over the static base houses to enrich them, but also grab from local JSON to flesh out the catalog
-  let mergedHouses = HOUSES_DATA.map(baseHouse => {
-    const apiHouse = apiHouses ? apiHouses.find(h => h.name.toUpperCase().includes(baseHouse.name)) : null;
-    const localHouse = localHouses ? localHouses.find(h => h.name.toUpperCase().includes(baseHouse.name)) : null;
-    return mergeHouseData(baseHouse, apiHouse, localHouse);
-  });
+  if (localHouses && localHouses.length > 0) {
+    return localHouses.map(localHouse => {
+      // Find matching API data if it exists
+      const apiHouse = apiHouses ? apiHouses.find(h =>
+        h.name.toUpperCase().includes(localHouse.name.toUpperCase())
+      ) : null;
+      return mergeHouseData(null, apiHouse, localHouse);
+    });
+  }
 
-  // If localHouses exist, we could optionally append ones we don't have static data for.
-  // For now, we return the enriched static array to maintain premium layouts,
-  // but if you wanted the full list you could append here.
-  return mergedHouses;
+  // Fallback if local JSON is missing (just map over the API payload directly)
+  if (apiHouses && apiHouses.length > 0) {
+    return apiHouses.map(apiHouse => mergeHouseData(null, apiHouse, null));
+  }
+
+  return [];
 };
 
 export const getHouseById = async (id) => {
@@ -81,14 +80,11 @@ export const getBattles = async () => {
 
   if (localBattles && localBattles.length > 0) {
     return localBattles.map(localBattle => {
-      // Find matching static fallback if it exists for flavor text
-      const baseBattle = BATTLES_DATA.find(b => b.name === localBattle.name) || null;
-      return mergeBattleData(baseBattle, localBattle);
+      return mergeBattleData(null, localBattle);
     });
   }
 
-  // Pure fallback if local JSON fails
-  return BATTLES_DATA.map(baseBattle => mergeBattleData(baseBattle, null));
+  return [];
 };
 
 export const getBattleById = async (id) => {
@@ -97,7 +93,7 @@ export const getBattleById = async (id) => {
 }
 
 export const getLore = async () => {
-  return Promise.resolve(LORE_DATA);
+  return Promise.resolve([]); // Lore static data wiped, requires future API integration
 };
 
 export const getEpisodes = async () => fetchLocalJSON('episodes.json');
