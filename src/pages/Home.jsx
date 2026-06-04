@@ -13,7 +13,12 @@ const Home = () => {
   const [battles, setBattles] = useState([])
 
   useEffect(() => {
-    getCharacters().then(data => setCharacters(data.slice(0, 4)))
+    getCharacters().then(data => {
+      // Force filter for legendary characters specifically so the homepage remains curated
+      const legendaryNames = ['Jon Snow', 'Daenerys Targaryen', 'Tyrion Lannister', 'Arya Stark'];
+      const curated = data.filter(c => legendaryNames.includes(c.name)).slice(0, 4);
+      setCharacters(curated.length > 0 ? curated : data.slice(0, 4));
+    })
     getBattles().then(data => setBattles(data.slice(0, 3)))
   }, [])
 

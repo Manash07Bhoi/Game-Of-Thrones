@@ -1,15 +1,27 @@
 export const mergeCharacterData = (baseContent, apiChar, localData) => {
   // We prioritize API data where available, fallback to localData (processed json), then baseContent (static fallback)
+  const defaultBg = '#1a1f26';
+  const defaultAccent = '#c9a84c';
+
   return {
-    ...baseContent,
-    name: apiChar?.fullName || baseContent.name,
-    fullTitle: apiChar?.title || baseContent.fullTitle,
-    image: apiChar?.imageUrl || null, // API image
-    house: apiChar?.family || baseContent.house,
+    id: localData?.id || apiChar?.id?.toString() || baseContent?.id || Math.random().toString(),
+    name: apiChar?.fullName || localData?.name || baseContent?.name,
+    fullTitle: apiChar?.title || localData?.title || baseContent?.fullTitle || '',
+    image: apiChar?.imageUrl || baseContent?.image || null, // API image
+    house: apiChar?.family || baseContent?.house || localData?.houseId?.replace('house_house-', 'House ') || 'Unknown House',
     // Add local dataset metadata if we have it
     popularity: localData?.popularity || null,
     spokenLineCount: localData?.spokenLineCount || 0,
-    isAlive: localData?.isAlive ?? null
+    isAlive: localData?.isAlive ?? null,
+
+    // Aesthetic Fallbacks
+    biography: baseContent?.biography || `A character residing in the Seven Kingdoms.`,
+    achievements: baseContent?.achievements || [],
+    relationships: baseContent?.relationships || [],
+    quote: baseContent?.quote || '',
+    bg: baseContent?.bg || defaultBg,
+    accent: baseContent?.accent || defaultAccent,
+    sigilIcon: baseContent?.sigilIcon || '♔'
   };
 };
 

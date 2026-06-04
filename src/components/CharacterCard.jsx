@@ -11,7 +11,9 @@ const CharacterCard = ({ character, index }) => {
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => el.classList.add('visible'), index * 100)
+          // Modulo the index to prevent massive animation delays on paginated lists
+          const staggerDelay = (index % 12) * 80;
+          setTimeout(() => el.classList.add('visible'), staggerDelay)
           obs.disconnect()
         }
       },

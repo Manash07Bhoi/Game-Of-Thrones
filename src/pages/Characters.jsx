@@ -9,6 +9,10 @@ const Characters = () => {
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
 
+  // Pagination
+  const [page, setPage] = useState(1)
+  const limit = 48
+
   useEffect(() => {
     window.scrollTo(0, 0)
     getCharacters().then(data => {
@@ -24,12 +28,16 @@ const Characters = () => {
       setFilteredChars(
         characters.filter(c =>
           c.name.toLowerCase().includes(term) ||
-          (c.house && c.house.toLowerCase().includes(term))
+          (c.house && c.house.toLowerCase().includes(term)) ||
+          (c.fullTitle && c.fullTitle.toLowerCase().includes(term))
         )
       )
+      setPage(1) // reset pagination on new search
     }, 0)
     return () => clearTimeout(timer)
   }, [search, characters])
+
+  const paginatedChars = filteredChars.slice(0, page * limit)
 
   return (
     <div className="page-transition" style={{ paddingTop: '120px', background: '#000', minHeight: '100vh', paddingBottom: '100px' }}>
@@ -63,10 +71,21 @@ const Characters = () => {
             />
           </div>
           <div className="characters-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-            {filteredChars.map((char, i) => (
+            {paginatedChars.map((char, i) => (
               <CharacterCard key={char.id} character={char} index={i} />
             ))}
           </div>
+
+          {paginatedChars.length < filteredChars.length && (
+            <div style={{ textAlign: 'center', marginTop: '64px' }}>
+              <button
+                onClick={() => setPage(p => p + 1)}
+                className="got-cta-ghost"
+              >
+                Load More Archives
+              </button>
+            </div>
+          )}
         </>
       )}
     </div>
