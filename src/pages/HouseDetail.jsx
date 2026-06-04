@@ -35,9 +35,22 @@ const HouseDetail = () => {
           <p><strong>Founder</strong><br/><span style={{ color: 'var(--parchment)' }}>{house.founder}</span></p>
         </div>
 
-        <p style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'var(--ash)', lineHeight: '1.8', marginBottom: '48px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 48px auto' }}>
-          {house.history}
-        </p>
+        {house.history ? (
+          <p style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'var(--ash)', lineHeight: '1.8', marginBottom: '48px', textAlign: 'center', maxWidth: '800px', margin: '0 auto 48px auto' }}>
+            {house.history}
+          </p>
+        ) : (
+          <p style={{ fontFamily: 'IM Fell English', fontSize: '18px', color: 'rgba(255,255,255,0.2)', fontStyle: 'italic', marginBottom: '48px', textAlign: 'center' }}>History unavailable.</p>
+        )}
+
+        {house.famousMembers && house.famousMembers.length > 0 && (
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '24px', marginBottom: '16px' }}>Notable Members</h3>
+            <ul style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px', fontFamily: 'Cinzel', fontSize: '11px', color: 'var(--ash)', letterSpacing: '0.1em' }}>
+              {house.famousMembers.map(member => <li key={member} style={{ padding: '8px 16px', border: '1px solid rgba(201,168,76,0.2)' }}>{member}</li>)}
+            </ul>
+          </div>
+        )}
 
       </div>
     </div>

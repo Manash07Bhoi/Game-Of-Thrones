@@ -1,19 +1,33 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import Fuse from 'fuse.js'
 import { getSearchIndex } from '../services/contentService'
 import './Navbar.css'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+
+  // Search State
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [searchIndex, setSearchIndex] = useState([])
+  const [selectedIndex, setSelectedIndex] = useState(-1)
 
   const location = useLocation()
   const navigate = useNavigate()
   const searchInputRef = useRef(null)
+
+  // Initialize Fuse.js for smart fuzzy searching
+  const fuse = useMemo(() => new Fuse(searchIndex, {
+    keys: [
+      { name: 'title', weight: 2 },
+      { name: 'content', weight: 1 }
+    ],
+    threshold: 0.3,
+    includeScore: true
+  }), [searchIndex])
 
   useEffect(() => {
     getSearchIndex().then(data => {
@@ -25,18 +39,48 @@ const Navbar = () => {
     const timer = setTimeout(() => {
       if (!searchQuery) {
         setSearchResults([])
+        setSelectedIndex(-1)
         return
       }
-      const term = searchQuery.toLowerCase()
-      const results = searchIndex.filter(item =>
-        item.title.toLowerCase().includes(term) || item.content.toLowerCase().includes(term)
-      ).slice(0, 8)
+      const results = fuse.search(searchQuery).slice(0, 10).map(res => res.item)
       setSearchResults(results)
-    }, 0)
+      setSelectedIndex(results.length > 0 ? 0 : -1)
+    }, 150) // slight debounce
     return () => clearTimeout(timer)
-  }, [searchQuery, searchIndex])
+  }, [searchQuery, fuse])
 
-  const handleSearchResultClick = (url) => {
+  useEffect(() => {
+    const handleSearchResultClick = (url) => {
+      setSearchOpen(false)
+      setSearchQuery('')
+      navigate(url)
+    }
+
+    // Keyboard Navigation for Search
+    const handleKeyDown = (e) => {
+      if (!searchOpen) return
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        setSelectedIndex(prev => (prev < searchResults.length - 1 ? prev + 1 : prev))
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        setSelectedIndex(prev => (prev > 0 ? prev - 1 : 0))
+      } else if (e.key === 'Enter') {
+        e.preventDefault()
+        if (selectedIndex >= 0 && searchResults[selectedIndex]) {
+          handleSearchResultClick(searchResults[selectedIndex].url)
+        }
+      } else if (e.key === 'Escape') {
+        setSearchOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [searchOpen, searchResults, selectedIndex, navigate])
+
+  const handleSearchResultClickUI = (url) => {
     setSearchOpen(false)
     setSearchQuery('')
     navigate(url)
@@ -117,24 +161,40 @@ const Navbar = () => {
           <input
             ref={searchInputRef}
             type="text"
-            placeholder="Search the Realm..."
+            placeholder="Search characters, houses, battles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="got-search-input"
           />
           <div className="got-search-results">
-            {searchResults.map(result => (
+            {searchResults.map((result, i) => (
               <div
                 key={result.id}
-                className="got-search-result-item"
-                onClick={() => handleSearchResultClick(result.url)}
+                className={`got-search-result-item ${i === selectedIndex ? 'selected' : ''}`}
+                onClick={() => handleSearchResultClickUI(result.url)}
+                onMouseEnter={() => setSelectedIndex(i)}
               >
                 <span className="result-type">{result.type}</span>
-                <span className="result-title">{result.title}</span>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span className="result-title">{result.title}</span>
+                  {result.content !== result.title && (
+                    <span style={{ fontSize: '12px', color: 'var(--ash)', fontFamily: 'IM Fell English', fontStyle: 'italic', marginTop: '4px' }}>
+                      {result.content.length > 60 ? result.content.substring(0, 60) + '...' : result.content}
+                    </span>
+                  )}
+                </div>
               </div>
             ))}
+            {!searchQuery && (
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '16px' }}>
+                <span style={{ color: 'var(--gold-dim)', fontSize: '10px', textTransform: 'uppercase', width: '100%', textAlign: 'center', marginBottom: '8px', fontFamily: 'Cinzel' }}>Popular Searches</span>
+                {['Jon Snow', 'House Stark', 'Battle of the Bastards', 'Daenerys'].map(term => (
+                   <button key={term} onClick={() => setSearchQuery(term)} className="got-search-pill">{term}</button>
+                ))}
+              </div>
+            )}
             {searchQuery && searchResults.length === 0 && (
-              <div style={{ color: 'var(--ash)', textAlign: 'center', marginTop: '20px' }}>No ravens brought news of that...</div>
+              <div style={{ color: 'var(--ash)', textAlign: 'center', marginTop: '20px', fontFamily: 'IM Fell English', fontStyle: 'italic' }}>No ravens brought news of "{searchQuery}"...</div>
             )}
           </div>
         </div>

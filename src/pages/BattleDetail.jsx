@@ -33,8 +33,12 @@ const BattleDetail = () => {
           />
 
           <div style={{ marginTop: '40px', fontFamily: 'IM Fell English', fontSize: '18px', color: 'var(--ash)', lineHeight: '1.8' }}>
-            <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '24px', marginBottom: '16px' }}>Background</h3>
-            <p style={{ marginBottom: '40px' }}>{battle.background}</p>
+            {battle.background && (
+              <>
+                <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '24px', marginBottom: '16px' }}>Background</h3>
+                <p style={{ marginBottom: '40px' }}>{battle.background}</p>
+              </>
+            )}
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginBottom: '40px' }}>
               <div>
@@ -51,14 +55,22 @@ const BattleDetail = () => {
               </div>
             </div>
 
-            <div style={{ padding: '24px', background: 'rgba(201, 168, 76, 0.05)', borderLeft: '2px solid var(--gold)', marginBottom: '40px' }}>
-              <h3 style={{ fontFamily: 'Cinzel', color: 'var(--gold)', fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>Outcome</h3>
-              <p>{battle.outcome}</p>
-            </div>
+            {battle.outcome && (
+              <div style={{ padding: '24px', background: 'rgba(201, 168, 76, 0.05)', borderLeft: '2px solid var(--gold)', marginBottom: '40px' }}>
+                <h3 style={{ fontFamily: 'Cinzel', color: 'var(--gold)', fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '12px' }}>Outcome</h3>
+                <p>{battle.outcome}</p>
+              </div>
+            )}
 
-            <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '24px', marginBottom: '16px' }}>Legacy & Significance</h3>
-            <p>{battle.significance}</p>
-            <p style={{ marginTop: '16px', fontStyle: 'italic', color: 'var(--gold-dim)' }}>{battle.legacy}</p>
+            {battle.significance && (
+              <>
+                <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '24px', marginBottom: '16px' }}>Legacy & Significance</h3>
+                <p>{battle.significance}</p>
+              </>
+            )}
+            {battle.legacy && (
+              <p style={{ marginTop: '16px', fontStyle: 'italic', color: 'var(--gold-dim)' }}>{battle.legacy}</p>
+            )}
           </div>
         </div>
       </div>

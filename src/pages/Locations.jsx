@@ -27,9 +27,10 @@ const Locations = () => {
       ) : (
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '16px' }}>
           {locations.map(loc => (
-            <div key={loc.id} style={{ border: '1px solid rgba(201, 168, 76, 0.3)', padding: '16px', background: '#080808' }}>
-              <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '18px', marginBottom: '8px' }}>{loc.name}</h3>
-              <p style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', color: 'var(--ash)', fontSize: '14px' }}>Region: {loc.region || 'Unknown'}</p>
+            <div key={loc.id} style={{ border: '1px solid rgba(201, 168, 76, 0.3)', padding: '24px', background: '#080808', transition: 'border-color 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--gold)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(201, 168, 76, 0.3)'}>
+              <h3 style={{ fontFamily: 'Cinzel Decorative', color: 'var(--parchment)', fontSize: '20px', marginBottom: '8px' }}>{loc.name}</h3>
+              <p style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', color: 'var(--ash)', fontSize: '15px', marginBottom: '16px' }}>Region: {loc.region || 'Unknown'}</p>
+              <a href={`/Game-Of-Thrones/?/locations/${loc.id}`} style={{ fontFamily: 'Cinzel', fontSize: '10px', color: 'var(--gold)', textTransform: 'uppercase', textDecoration: 'none', letterSpacing: '0.1em' }}>View Geography &rarr;</a>
             </div>
           ))}
         </div>

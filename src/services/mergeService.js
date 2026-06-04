@@ -24,10 +24,20 @@ export const mergeCharacterData = (baseContent, apiChar, localData) => {
 
   const { bg, accent, icon } = houseStyles[styleKey];
 
+  const fullTitle = apiChar?.title || localData?.title || baseContent?.fullTitle || '';
+  const titleLower = fullTitle.toLowerCase();
+  let characterType = 'Commoner';
+  if (titleLower.includes('king') || titleLower.includes('khal')) characterType = 'King';
+  else if (titleLower.includes('queen') || titleLower.includes('khaleesi')) characterType = 'Queen';
+  else if (titleLower.includes('lord')) characterType = 'Lord';
+  else if (titleLower.includes('lady')) characterType = 'Lady';
+  else if (titleLower.includes('ser ') || titleLower.includes('knight')) characterType = 'Knight';
+  else if (titleLower.includes('maester')) characterType = 'Maester';
+
   return {
     id: localData?.id || apiChar?.id?.toString() || baseContent?.id || Math.random().toString(),
     name: apiChar?.fullName || localData?.name || baseContent?.name,
-    fullTitle: apiChar?.title || localData?.title || baseContent?.fullTitle || '',
+    fullTitle: fullTitle,
     image: apiChar?.imageUrl || baseContent?.image || null, // API image
     house: apiChar?.family || baseContent?.house || localData?.houseId?.replace('house_house-', 'House ').replace(/-/g, ' ') || 'Unknown House',
 
@@ -35,14 +45,13 @@ export const mergeCharacterData = (baseContent, apiChar, localData) => {
     popularity: localData?.popularity || null,
     spokenLineCount: localData?.spokenLineCount || 0,
     isAlive: localData?.isAlive ?? null,
+    characterType,
 
-    // Aesthetic Fallbacks
-    biography: baseContent?.biography ||
-      (localData?.houseId ? `A sworn member or affiliate of ${localData.houseId.replace('house_house-', 'House ').replace(/-/g, ' ')}. ` : '') +
-      (localData?.spokenLineCount > 0 ? `This character appears in the recorded histories, speaking ${localData.spokenLineCount} times during the events of the wars to come.` : `A character residing in the Seven Kingdoms during the tumultuous wars for the Iron Throne.`),
-    achievements: baseContent?.achievements || [],
-    relationships: baseContent?.relationships || [],
-    quote: baseContent?.quote || (localData?.spokenLineCount > 0 ? "Their words are recorded in the annals of history." : ''),
+    // Authentic Data Only
+    biography: null, // Hardcoded static biographies scrubbed
+    achievements: null,
+    relationships: null,
+    quote: null,
 
     // Thematic Styles
     bg: baseContent?.bg || bg,
@@ -69,18 +78,18 @@ export const mergeHouseData = (baseContent, apiHouse, localHouse) => {
 
 export const mergeBattleData = (baseContent, localBattle) => {
   // localBattle is from processed-data battles.json
-  // baseContent is static fallback (if exists)
+  // Authentic mapping only.
   return {
-    id: localBattle?.id || baseContent?.id || Math.random().toString(),
-    name: localBattle?.name || baseContent?.name,
-    location: localBattle?.region || baseContent?.location,
-    year: localBattle?.year ? `${localBattle.year} AC` : baseContent?.year,
-    background: baseContent?.background || localBattle?.battleType || 'No tactical background available.',
-    description: baseContent?.description || `A ${localBattle?.battleType || 'battle'} fought in ${localBattle?.region || 'Westeros'}.`,
-    commanders: localBattle?.commanders ? [...(localBattle.commanders.attackers || []), ...(localBattle.commanders.defenders || [])] : baseContent?.commanders || [],
-    participants: localBattle?.factions ? [...(localBattle.factions.attackers || []), ...(localBattle.factions.defenders || [])] : baseContent?.participants || [],
-    outcome: localBattle?.attackerOutcome ? `Attacker ${localBattle.attackerOutcome}` : baseContent?.outcome || 'Unknown',
-    significance: baseContent?.significance || `Attackers: ${localBattle?.attackerSize || 'Unknown'}, Defenders: ${localBattle?.defenderSize || 'Unknown'}`,
-    legacy: baseContent?.legacy || ''
+    id: localBattle?.id || Math.random().toString(),
+    name: localBattle?.name,
+    location: localBattle?.locationId?.replace('loc_', '').replace(/-/g, ' '),
+    region: localBattle?.region,
+    year: localBattle?.year ? `${localBattle.year} AC` : null,
+    battleType: localBattle?.battleType,
+    commanders: localBattle?.commanders ? [...(localBattle.commanders.attackers || []), ...(localBattle.commanders.defenders || [])] : [],
+    participants: localBattle?.factions ? [...(localBattle.factions.attackers || []), ...(localBattle.factions.defenders || [])] : [],
+    outcome: localBattle?.attackerOutcome ? `Attacker ${localBattle.attackerOutcome}` : null,
+    attackerSize: localBattle?.attackerSize,
+    defenderSize: localBattle?.defenderSize
   };
 };
