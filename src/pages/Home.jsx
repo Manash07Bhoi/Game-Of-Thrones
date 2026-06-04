@@ -4,6 +4,7 @@ import Section1 from '../components/Section1'
 import SectionHeader from '../components/SectionHeader'
 import CharacterCard from '../components/CharacterCard'
 import BattleCard from '../components/BattleCard'
+import { Link } from 'react-router-dom'
 import { getCharacters, getBattles } from '../services/contentService'
 import './Home.css'
 
@@ -36,6 +37,11 @@ const Home = () => {
           )) : (
             <div style={{ textAlign: 'center', color: 'var(--gold)', gridColumn: '1 / -1' }}>Fetching from Maester's Archives...</div>
           )}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '64px' }}>
+          <Link to="/characters" className="got-cta-ghost" style={{ textDecoration: 'none' }}>
+            Explore All Characters
+          </Link>
         </div>
       </section>
 
