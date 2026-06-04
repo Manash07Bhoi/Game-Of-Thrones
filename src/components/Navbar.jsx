@@ -1,11 +1,46 @@
-import { useState, useEffect } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { getSearchIndex } from '../services/contentService'
 import './Navbar.css'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+  const [searchIndex, setSearchIndex] = useState([])
+
   const location = useLocation()
+  const navigate = useNavigate()
+  const searchInputRef = useRef(null)
+
+  useEffect(() => {
+    getSearchIndex().then(data => {
+      if (data) setSearchIndex(data)
+    })
+  }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!searchQuery) {
+        setSearchResults([])
+        return
+      }
+      const term = searchQuery.toLowerCase()
+      const results = searchIndex.filter(item =>
+        item.title.toLowerCase().includes(term) || item.content.toLowerCase().includes(term)
+      ).slice(0, 8)
+      setSearchResults(results)
+    }, 0)
+    return () => clearTimeout(timer)
+  }, [searchQuery, searchIndex])
+
+  const handleSearchResultClick = (url) => {
+    setSearchOpen(false)
+    setSearchQuery('')
+    navigate(url)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +89,14 @@ const Navbar = () => {
           <li><NavLink to="/houses" className={({isActive}) => isActive ? 'active' : ''}>Great Houses</NavLink></li>
           <li><NavLink to="/characters" className={({isActive}) => isActive ? 'active' : ''}>Characters</NavLink></li>
           <li><NavLink to="/battles" className={({isActive}) => isActive ? 'active' : ''}>History</NavLink></li>
+          <li>
+            <button
+              onClick={() => { setSearchOpen(!searchOpen); setTimeout(() => searchInputRef.current?.focus(), 100); }}
+              style={{ background: 'none', border: 'none', color: 'var(--gold)', cursor: 'pointer', fontFamily: 'Cinzel', fontSize: '12px' }}
+            >
+              SEARCH
+            </button>
+          </li>
         </ul>
         <button
           className={`got-mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
@@ -66,6 +109,36 @@ const Navbar = () => {
           <span className="menu-icon-line"></span>
         </button>
       </nav>
+
+      {/* Search Overlay */}
+      <div className={`got-search-overlay ${searchOpen ? 'open' : ''}`}>
+        <button className="got-search-close" onClick={() => setSearchOpen(false)}>✕</button>
+        <div className="got-search-container">
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search the Realm..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="got-search-input"
+          />
+          <div className="got-search-results">
+            {searchResults.map(result => (
+              <div
+                key={result.id}
+                className="got-search-result-item"
+                onClick={() => handleSearchResultClick(result.url)}
+              >
+                <span className="result-type">{result.type}</span>
+                <span className="result-title">{result.title}</span>
+              </div>
+            ))}
+            {searchQuery && searchResults.length === 0 && (
+              <div style={{ color: 'var(--ash)', textAlign: 'center', marginTop: '20px' }}>No ravens brought news of that...</div>
+            )}
+          </div>
+        </div>
+      </div>
 
       {/* Mobile Nav Overlay */}
       <div

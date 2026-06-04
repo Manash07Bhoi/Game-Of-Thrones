@@ -8,6 +8,10 @@ import CharacterDetail from './pages/CharacterDetail'
 import Battles from './pages/Battles'
 import BattleDetail from './pages/BattleDetail'
 import Lore from './pages/Lore'
+import Episodes from './pages/Episodes'
+import Seasons from './pages/Seasons'
+import Locations from './pages/Locations'
+import Analytics from './pages/Analytics'
 import './App.css'
 
 function App() {
@@ -27,6 +31,11 @@ function App() {
         <Route path="/battles/:id" element={<BattleDetail />} />
 
         <Route path="/lore" element={<Lore />} />
+
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/seasons" element={<Seasons />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
     </Router>
   )
