@@ -24,13 +24,34 @@ export const getCharacters = async () => {
     fetchLocalJSON('characters.json')
   ]);
 
-  // Merge the data based on the base static content
-  return CHARACTERS_DATA.map(baseChar => {
-    // Attempt to match by name (naive matching for this phase)
-    const apiChar = apiChars ? apiChars.find(c => c.firstName === baseChar.name || c.fullName.includes(baseChar.name)) : null;
-    const localChar = localChars ? localChars.find(c => c.name.includes(baseChar.name)) : null;
+  // If the API call succeeds, we want the FULL catalog. If it fails, fallback to the static legendary CHARACTERS_DATA.
+  if (apiChars && apiChars.length > 0) {
+    return apiChars.map(apiChar => {
+      // Find matching static data (if it's a legendary character) for quotes/bios
+      const baseChar = CHARACTERS_DATA.find(c => c.name === apiChar.firstName || c.name === apiChar.fullName) || {
+        id: apiChar.id.toString(), // fallback id
+        name: apiChar.fullName,
+        fullTitle: apiChar.title,
+        house: apiChar.family,
+        biography: 'A resident of Westeros.',
+        achievements: [],
+        relationships: [],
+        quote: '',
+        bg: '#1a1f26',
+        accent: '#c9a84c',
+        sigilIcon: '♔'
+      };
 
-    return mergeCharacterData(baseChar, apiChar, localChar);
+      const localChar = localChars ? localChars.find(c => c.name === apiChar.fullName) : null;
+
+      return mergeCharacterData(baseChar, apiChar, localChar);
+    });
+  }
+
+  // Fallback if ThronesAPI entirely fails
+  return CHARACTERS_DATA.map(baseChar => {
+    const localChar = localChars ? localChars.find(c => c.name.includes(baseChar.name)) : null;
+    return mergeCharacterData(baseChar, null, localChar);
   });
 };
 

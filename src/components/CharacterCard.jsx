@@ -27,9 +27,13 @@ const CharacterCard = ({ character, index }) => {
         <div className="char-card-inner">
         <div className="char-card-front">
           <div className="char-image-wrap">
-            <div className="char-image-fallback" style={{ background: character.bg }}>
-               <span className="char-sigil-icon">{character.sigilIcon}</span>
-            </div>
+            {character.image ? (
+              <img src={character.image} alt={character.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            ) : (
+              <div className="char-image-fallback" style={{ background: character.bg || '#111' }}>
+                 <span className="char-sigil-icon">{character.sigilIcon || '♔'}</span>
+              </div>
+            )}
             <div className="char-vignette" />
           </div>
           <div className="char-info">
