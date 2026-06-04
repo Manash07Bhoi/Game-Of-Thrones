@@ -242,11 +242,31 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  transition: background 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.got-search-result-item:hover {
+.got-search-result-item:hover,
+.got-search-result-item.selected {
   background: rgba(201, 168, 76, 0.15);
+  border-color: var(--gold);
+}
+
+.got-search-pill {
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  color: var(--ash);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  transition: all 0.3s;
+}
+
+.got-search-pill:hover {
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 .result-type {

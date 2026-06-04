@@ -24,10 +24,20 @@ export const mergeCharacterData = (baseContent, apiChar, localData) => {
 
   const { bg, accent, icon } = houseStyles[styleKey];
 
+  const fullTitle = apiChar?.title || localData?.title || baseContent?.fullTitle || '';
+  const titleLower = fullTitle.toLowerCase();
+  let characterType = 'Commoner';
+  if (titleLower.includes('king') || titleLower.includes('khal')) characterType = 'King';
+  else if (titleLower.includes('queen') || titleLower.includes('khaleesi')) characterType = 'Queen';
+  else if (titleLower.includes('lord')) characterType = 'Lord';
+  else if (titleLower.includes('lady')) characterType = 'Lady';
+  else if (titleLower.includes('ser ') || titleLower.includes('knight')) characterType = 'Knight';
+  else if (titleLower.includes('maester')) characterType = 'Maester';
+
   return {
     id: localData?.id || apiChar?.id?.toString() || baseContent?.id || Math.random().toString(),
     name: apiChar?.fullName || localData?.name || baseContent?.name,
-    fullTitle: apiChar?.title || localData?.title || baseContent?.fullTitle || '',
+    fullTitle: fullTitle,
     image: apiChar?.imageUrl || baseContent?.image || null, // API image
     house: apiChar?.family || baseContent?.house || localData?.houseId?.replace('house_house-', 'House ').replace(/-/g, ' ') || 'Unknown House',
 
@@ -35,6 +45,7 @@ export const mergeCharacterData = (baseContent, apiChar, localData) => {
     popularity: localData?.popularity || null,
     spokenLineCount: localData?.spokenLineCount || 0,
     isAlive: localData?.isAlive ?? null,
+    characterType,
 
     // Aesthetic Fallbacks
     biography: baseContent?.biography ||

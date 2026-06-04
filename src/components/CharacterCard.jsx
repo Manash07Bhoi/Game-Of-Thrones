@@ -51,8 +51,10 @@ const CharacterCard = ({ character, index }) => {
         <div className="char-card-back" style={{ borderColor: character.accent }}>
           <div className="char-back-content">
             <span className="char-full-title">{character.fullTitle}</span>
-            <span className="char-allegiance"><strong>Allegiance:</strong> {character.allegiance}</span>
-            <span className="char-status"><strong>Status:</strong> {character.status}</span>
+            <span className="char-allegiance"><strong>House:</strong> {character.house}</span>
+            <span className="char-allegiance"><strong>Type:</strong> {character.characterType}</span>
+            <span className="char-status"><strong>Status:</strong> {character.isAlive === false ? 'Deceased' : 'Alive/Unknown'}</span>
+            <span className="char-status"><strong>Dialogue:</strong> {character.spokenLineCount} Lines</span>
 
             <div className="got-divider" style={{ margin: '12px 0' }}>
               <span className="got-divider-line" />
