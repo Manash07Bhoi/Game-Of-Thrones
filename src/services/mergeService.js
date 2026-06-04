@@ -1,14 +1,36 @@
+const houseStyles = {
+  stark: { bg: 'linear-gradient(135deg, #0d1117 0%, #1a2332 100%)', accent: '#8fafc4', icon: '🐺' },
+  lannister: { bg: 'linear-gradient(135deg, #1a1200 0%, #2a1f00 100%)', accent: '#d4a84b', icon: '🦁' },
+  targaryen: { bg: 'linear-gradient(135deg, #1a0000 0%, #2d0a0a 100%)', accent: '#c0392b', icon: '🐉' },
+  baratheon: { bg: 'linear-gradient(135deg, #0a0a00 0%, #1f1c00 100%)', accent: '#c9a84c', icon: '🦌' },
+  greyjoy: { bg: 'linear-gradient(135deg, #050810 0%, #0a1020 100%)', accent: '#b8a040', icon: '🦑' },
+  martell: { bg: 'linear-gradient(135deg, #1a0a00 0%, #2b1200 100%)', accent: '#d35400', icon: '☀️' },
+  tyrell: { bg: 'linear-gradient(135deg, #030a00 0%, #0a1800 100%)', accent: '#5a9e48', icon: '🌹' },
+  arryn: { bg: 'linear-gradient(135deg, #0a141f 0%, #14283d 100%)', accent: '#a3c2d1', icon: '🦅' },
+  tully: { bg: 'linear-gradient(135deg, #05141c 0%, #0a2938 100%)', accent: '#c0392b', icon: '🐟' },
+  default: { bg: 'linear-gradient(135deg, #0a0a0a 0%, #141414 100%)', accent: '#8a8a8a', icon: '♔' }
+};
+
 export const mergeCharacterData = (baseContent, apiChar, localData) => {
-  // We prioritize API data where available, fallback to localData (processed json), then baseContent (static fallback)
-  const defaultBg = '#1a1f26';
-  const defaultAccent = '#c9a84c';
+  // Determine house string for mapping
+  const houseStr = (apiChar?.family || baseContent?.house || localData?.houseId || 'Unknown').toLowerCase();
+  let styleKey = 'default';
+  for (const key of Object.keys(houseStyles)) {
+    if (houseStr.includes(key)) {
+      styleKey = key;
+      break;
+    }
+  }
+
+  const { bg, accent, icon } = houseStyles[styleKey];
 
   return {
     id: localData?.id || apiChar?.id?.toString() || baseContent?.id || Math.random().toString(),
     name: apiChar?.fullName || localData?.name || baseContent?.name,
     fullTitle: apiChar?.title || localData?.title || baseContent?.fullTitle || '',
     image: apiChar?.imageUrl || baseContent?.image || null, // API image
-    house: apiChar?.family || baseContent?.house || localData?.houseId?.replace('house_house-', 'House ') || 'Unknown House',
+    house: apiChar?.family || baseContent?.house || localData?.houseId?.replace('house_house-', 'House ').replace(/-/g, ' ') || 'Unknown House',
+
     // Add local dataset metadata if we have it
     popularity: localData?.popularity || null,
     spokenLineCount: localData?.spokenLineCount || 0,
@@ -21,9 +43,12 @@ export const mergeCharacterData = (baseContent, apiChar, localData) => {
     achievements: baseContent?.achievements || [],
     relationships: baseContent?.relationships || [],
     quote: baseContent?.quote || (localData?.spokenLineCount > 0 ? "Their words are recorded in the annals of history." : ''),
-    bg: baseContent?.bg || defaultBg,
-    accent: baseContent?.accent || defaultAccent,
-    sigilIcon: baseContent?.sigilIcon || '♔'
+
+    // Thematic Styles
+    bg: baseContent?.bg || bg,
+    accent: baseContent?.accent || accent,
+    sigilIcon: baseContent?.sigilIcon || icon,
+    initials: (apiChar?.fullName || localData?.name || baseContent?.name || 'U N').split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()
   };
 };
 
