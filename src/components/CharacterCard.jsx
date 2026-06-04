@@ -32,16 +32,19 @@ const CharacterCard = ({ character, index }) => {
             {character.image ? (
               <img src={character.image} alt={character.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             ) : (
-              <div className="char-image-fallback" style={{ background: character.bg || '#111' }}>
-                 <span className="char-sigil-icon">{character.sigilIcon || '♔'}</span>
+              <div className="char-image-fallback premium-fallback" style={{ background: character.bg }}>
+                 <div className="premium-fallback-content">
+                   <span className="premium-fallback-initials" style={{ color: character.accent }}>{character.initials}</span>
+                   <span className="premium-fallback-sigil">{character.sigilIcon}</span>
+                 </div>
               </div>
             )}
             <div className="char-vignette" />
           </div>
           <div className="char-info">
-            <p className="char-house">{character.house}</p>
+            <p className="char-house" style={{ color: character.accent }}>{character.house}</p>
             <h3 className="char-name">{character.name}</h3>
-            <p className="char-title">{character.title}</p>
+            <p className="char-title">{character.fullTitle || (character.isAlive === false ? 'Deceased' : 'Unknown Status')}</p>
           </div>
         </div>
 
