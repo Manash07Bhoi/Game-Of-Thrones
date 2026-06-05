@@ -62,11 +62,15 @@ const Lore = () => {
       />
       {loading ? (
         <div style={{ textAlign: 'center', color: 'var(--gold)', marginTop: '40px' }}>Consulting ancient texts...</div>
-      ) : (
+      ) : lore && lore.length > 0 ? (
         <div style={{ maxWidth: '900px', margin: '60px auto', padding: '0 40px' }}>
           {lore.map((item, idx) => (
             <LoreSection key={item.id} item={item} index={idx} />
           ))}
+        </div>
+      ) : (
+        <div style={{ textAlign: 'center', color: 'rgba(255,255,255,0.2)', fontStyle: 'italic', fontFamily: 'IM Fell English', marginTop: '40px' }}>
+          Lore texts unavailable. Awaiting verified historical API records.
         </div>
       )}
     </div>
