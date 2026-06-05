@@ -42,33 +42,41 @@ const Houses = () => {
 
               <div className="house-detail-info">
                 <div className="house-meta">
-                  <p><strong>Seat:</strong> {house.seat}</p>
-                  <p><strong>Region:</strong> {house.region}</p>
-                  <p><strong>Founder:</strong> {house.founder}</p>
+                  <p><strong>Seat:</strong> {house.seat || 'Unknown'}</p>
+                  <p><strong>Region:</strong> {house.region || 'Unknown'}</p>
+                  {house.founder && <p><strong>Founder:</strong> {house.founder}</p>}
                 </div>
                 <div className="got-divider left-align" style={{ margin: '20px 0' }}>
                   <span className="got-divider-line" />
                   <span className="got-divider-diamond" />
                   <span className="got-divider-line right" />
                 </div>
-                <p className="house-detail-desc">{house.history}</p>
+                {house.history ? (
+                  <p className="house-detail-desc">{house.history}</p>
+                ) : (
+                  <p className="house-detail-desc" style={{ color: 'rgba(255,255,255,0.2)', fontStyle: 'italic' }}>Historical records unavailable.</p>
+                )}
 
-                <div className="house-famous">
-                  <h4>Notable Members:</h4>
-                  <ul>
-                    {house.famousMembers.map(member => <li key={member}>{member}</li>)}
-                  </ul>
-                </div>
+                {house.famousMembers && house.famousMembers.length > 0 && (
+                  <div className="house-famous">
+                    <h4>Notable Members:</h4>
+                    <ul>
+                      {house.famousMembers.map(member => <li key={member}>{member}</li>)}
+                    </ul>
+                  </div>
+                )}
 
-                <div className="house-timeline">
-                  <h4>Timeline Highlights:</h4>
-                  {house.timeline.map(item => (
-                    <div key={item.event} className="timeline-item">
-                      <span className="tl-year">{item.year}</span>
-                      <span className="tl-event">{item.event}</span>
-                    </div>
-                  ))}
-                </div>
+                {house.timeline && house.timeline.length > 0 && (
+                  <div className="house-timeline">
+                    <h4>Timeline Highlights:</h4>
+                    {house.timeline.map(item => (
+                      <div key={item.event} className="timeline-item">
+                        <span className="tl-year">{item.year}</span>
+                        <span className="tl-event">{item.event}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}

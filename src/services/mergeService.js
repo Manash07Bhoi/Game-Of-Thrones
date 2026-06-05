@@ -66,13 +66,29 @@ export const mergeHouseData = (baseContent, apiHouse, localHouse) => {
   // localHouse: public/data/houses.json
   // baseContent: static fallback
 
+  const houseName = apiHouse?.name?.replace('House ', '') || localHouse?.name?.replace('House ', '') || baseContent?.name || 'Unknown';
+  let styleKey = 'default';
+  for (const key of Object.keys(houseStyles)) {
+    if (houseName.toLowerCase().includes(key)) {
+      styleKey = key;
+      break;
+    }
+  }
+  const { bg, accent, icon } = houseStyles[styleKey];
+
   return {
     ...baseContent,
     id: localHouse?.id || baseContent?.id || Math.random().toString(),
-    name: apiHouse?.name?.replace('House ', '') || localHouse?.name?.replace('House ', '') || baseContent?.name,
+    name: houseName,
     words: apiHouse?.words ? `"${apiHouse.words}"` : baseContent?.words,
     region: apiHouse?.region || baseContent?.region,
-    seat: (apiHouse?.seats && apiHouse.seats[0]) ? apiHouse.seats[0] : baseContent?.seat
+    seat: (apiHouse?.seats && apiHouse.seats[0]) ? apiHouse.seats[0] : baseContent?.seat,
+
+    // UI/Thematic properties
+    bg: baseContent?.bg || bg,
+    accent: baseContent?.accent || accent,
+    sigil: baseContent?.sigil || icon,
+    sigil_url: baseContent?.sigil_url || null
   };
 };
 
