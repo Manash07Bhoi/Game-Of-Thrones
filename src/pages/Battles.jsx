@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import BattleCard from '../components/BattleCard'
 import SectionHeader from '../components/SectionHeader'
 import { getBattles } from '../services/contentService'
+import './Home.css' // Import CSS for battles-grid
 
 const Battles = () => {
   const [battles, setBattles] = useState([])

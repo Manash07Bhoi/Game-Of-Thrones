@@ -24,7 +24,13 @@ const HouseDetail = () => {
         <Link to="/houses" style={{ color: 'var(--gold-dim)', textDecoration: 'none', textTransform: 'uppercase', fontSize: '10px', letterSpacing: '0.2em' }}>&larr; Back to Houses</Link>
 
         <div style={{ marginTop: '40px', textAlign: 'center' }}>
-          <img src={`${import.meta.env.BASE_URL}${house.sigil_url}`} alt={house.name} style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', border: `2px solid ${house.accent}`, marginBottom: '24px' }} />
+          {house.sigil_url && house.sigil_url !== "null" ? (
+            <img src={house.sigil_url.startsWith('http') ? house.sigil_url : `${import.meta.env.BASE_URL}${house.sigil_url}`} alt={house.name} style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', border: `2px solid ${house.accent}`, marginBottom: '24px' }} />
+          ) : (
+            <div style={{ width: '180px', height: '180px', borderRadius: '50%', background: house.bg, border: `2px solid ${house.accent}`, margin: '0 auto 24px auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ color: house.accent, fontSize: '72px' }}>{house.sigil}</span>
+            </div>
+          )}
           <h1 style={{ fontFamily: 'Cinzel Decorative', fontSize: '56px', color: 'var(--parchment)', marginBottom: '8px' }}>House {house.name}</h1>
           <h2 style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', fontSize: '20px', color: 'var(--gold)', marginBottom: '40px' }}>{house.words}</h2>
         </div>

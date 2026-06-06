@@ -80,9 +80,12 @@ export const mergeHouseData = (baseContent, apiHouse, localHouse) => {
     ...baseContent,
     id: localHouse?.id || baseContent?.id || Math.random().toString(),
     name: houseName,
-    words: apiHouse?.words ? `"${apiHouse.words}"` : baseContent?.words,
-    region: apiHouse?.region || baseContent?.region,
-    seat: (apiHouse?.seats && apiHouse.seats[0]) ? apiHouse.seats[0] : baseContent?.seat,
+    words: (apiHouse?.words && apiHouse.words !== "None" && apiHouse.words !== "Unknown") ? `"${apiHouse.words}"` : (localHouse?.words ? `"${localHouse.words}"` : baseContent?.words),
+    region: (apiHouse?.region && apiHouse.region !== "None" && apiHouse.region !== "Unknown") ? apiHouse.region : (localHouse?.region || baseContent?.region),
+    seat: (apiHouse?.seats && apiHouse.seats[0] && apiHouse.seats[0] !== "None" && apiHouse.seats[0] !== "Unknown") ? apiHouse.seats[0] : (localHouse?.seat || baseContent?.seat),
+    history: localHouse?.history || baseContent?.history || null,
+    founder: localHouse?.founder || baseContent?.founder || null,
+    famousMembers: localHouse?.famousMembers || baseContent?.famousMembers || [],
 
     // UI/Thematic properties
     bg: baseContent?.bg || bg,
@@ -98,14 +101,17 @@ export const mergeBattleData = (baseContent, localBattle) => {
   return {
     id: localBattle?.id || Math.random().toString(),
     name: localBattle?.name,
-    location: localBattle?.locationId?.replace('loc_', '').replace(/-/g, ' '),
-    region: localBattle?.region,
-    year: localBattle?.year ? `${localBattle.year} AC` : null,
-    battleType: localBattle?.battleType,
-    commanders: localBattle?.commanders ? [...(localBattle.commanders.attackers || []), ...(localBattle.commanders.defenders || [])] : [],
-    participants: localBattle?.factions ? [...(localBattle.factions.attackers || []), ...(localBattle.factions.defenders || [])] : [],
-    outcome: localBattle?.attackerOutcome ? `Attacker ${localBattle.attackerOutcome}` : null,
-    attackerSize: localBattle?.attackerSize,
-    defenderSize: localBattle?.defenderSize
+    location: localBattle?.locationId?.replace('loc_', '')?.replace(/-/g, ' ') || baseContent?.location || 'Unknown Location',
+    region: localBattle?.region || baseContent?.region || 'Unknown Region',
+    year: localBattle?.year ? `${localBattle.year} AC` : baseContent?.year,
+    battleType: localBattle?.battleType || baseContent?.battleType,
+    commanders: localBattle?.commanders ? [...(localBattle.commanders.attackers || []), ...(localBattle.commanders.defenders || [])].map(c => c.replace('char_', '').replace(/-/g, ' ')) : baseContent?.commanders || [],
+    participants: localBattle?.factions ? [...(localBattle.factions.attackers || []), ...(localBattle.factions.defenders || [])].map(f => f.replace('house_house-', 'House ').replace(/-/g, ' ')) : baseContent?.participants || [],
+    outcome: localBattle?.attackerOutcome ? `Attacker ${localBattle.attackerOutcome}` : baseContent?.outcome,
+    attackerSize: localBattle?.attackerSize || baseContent?.attackerSize,
+    defenderSize: localBattle?.defenderSize || baseContent?.defenderSize,
+    background: baseContent?.background || localBattle?.background || null,
+    legacy: baseContent?.legacy || localBattle?.legacy || null,
+    significance: baseContent?.significance || localBattle?.significance || null
   };
 };
