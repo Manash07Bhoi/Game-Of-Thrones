@@ -64,14 +64,16 @@ const CharacterCard = ({ character, index }) => {
 
             <p className="char-bio">{character.biography}</p>
 
-            <div className="char-extra">
-              <strong>Key Achievements:</strong>
-              <ul>
-                {character.achievements.map((ach, idx) => <li key={idx}>{ach}</li>)}
-              </ul>
-            </div>
+            {character.achievements && character.achievements.length > 0 && (
+              <div className="char-extra">
+                <strong>Key Achievements:</strong>
+                <ul>
+                  {character.achievements.map((ach, idx) => <li key={idx}>{ach}</li>)}
+                </ul>
+              </div>
+            )}
 
-            {character.relationships && (
+            {character.relationships && character.relationships.length > 0 && (
               <div className="char-extra" style={{ marginTop: '12px' }}>
                 <strong>Relationships:</strong>
                 <ul>
