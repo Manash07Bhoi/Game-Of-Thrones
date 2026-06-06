@@ -1,11 +1,11 @@
 const houseStyles = {
-  stark: { bg: 'linear-gradient(135deg, #0d1117 0%, #1a2332 100%)', accent: '#8fafc4', icon: '🐺' },
-  lannister: { bg: 'linear-gradient(135deg, #1a1200 0%, #2a1f00 100%)', accent: '#d4a84b', icon: '🦁' },
-  targaryen: { bg: 'linear-gradient(135deg, #1a0000 0%, #2d0a0a 100%)', accent: '#c0392b', icon: '🐉' },
-  baratheon: { bg: 'linear-gradient(135deg, #0a0a00 0%, #1f1c00 100%)', accent: '#c9a84c', icon: '🦌' },
-  greyjoy: { bg: 'linear-gradient(135deg, #050810 0%, #0a1020 100%)', accent: '#b8a040', icon: '🦑' },
+  stark: { bg: 'linear-gradient(135deg, #0d1117 0%, #1a2332 100%)', accent: '#8fafc4', icon: '🐺', sigil_url: 'images/one.jpg' },
+  lannister: { bg: 'linear-gradient(135deg, #1a1200 0%, #2a1f00 100%)', accent: '#d4a84b', icon: '🦁', sigil_url: 'images/two.jpg' },
+  targaryen: { bg: 'linear-gradient(135deg, #1a0000 0%, #2d0a0a 100%)', accent: '#c0392b', icon: '🐉', sigil_url: 'images/three.png' },
+  baratheon: { bg: 'linear-gradient(135deg, #0a0a00 0%, #1f1c00 100%)', accent: '#c9a84c', icon: '🦌', sigil_url: 'images/four.webp' },
+  greyjoy: { bg: 'linear-gradient(135deg, #050810 0%, #0a1020 100%)', accent: '#b8a040', icon: '🦑', sigil_url: 'images/five.jpg' },
   martell: { bg: 'linear-gradient(135deg, #1a0a00 0%, #2b1200 100%)', accent: '#d35400', icon: '☀️' },
-  tyrell: { bg: 'linear-gradient(135deg, #030a00 0%, #0a1800 100%)', accent: '#5a9e48', icon: '🌹' },
+  tyrell: { bg: 'linear-gradient(135deg, #030a00 0%, #0a1800 100%)', accent: '#5a9e48', icon: '🌹', sigil_url: 'images/six.jpg' },
   arryn: { bg: 'linear-gradient(135deg, #0a141f 0%, #14283d 100%)', accent: '#a3c2d1', icon: '🦅' },
   tully: { bg: 'linear-gradient(135deg, #05141c 0%, #0a2938 100%)', accent: '#c0392b', icon: '🐟' },
   default: { bg: 'linear-gradient(135deg, #0a0a0a 0%, #141414 100%)', accent: '#8a8a8a', icon: '♔' }
@@ -74,7 +74,7 @@ export const mergeHouseData = (baseContent, apiHouse, localHouse) => {
       break;
     }
   }
-  const { bg, accent, icon } = houseStyles[styleKey];
+  const { bg, accent, icon, sigil_url } = houseStyles[styleKey];
 
   return {
     ...baseContent,
@@ -91,7 +91,7 @@ export const mergeHouseData = (baseContent, apiHouse, localHouse) => {
     bg: baseContent?.bg || bg,
     accent: baseContent?.accent || accent,
     sigil: baseContent?.sigil || icon,
-    sigil_url: baseContent?.sigil_url || null
+    sigil_url: baseContent?.sigil_url || sigil_url || null
   };
 };
 

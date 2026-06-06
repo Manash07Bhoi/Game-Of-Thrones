@@ -1,7 +1,7 @@
 # Merge Conflict Resolution Report
 
 ## Overview
-This report documents the resolution of merge conflicts that occurred during the integration of production remediation fixes into the `main` branch. 
+This report documents the resolution of merge conflicts that occurred during the integration of production remediation fixes into the `main` branch.
 
 ## Conflicted Files and Resolutions
 
@@ -23,7 +23,7 @@ This report documents the resolution of merge conflicts that occurred during the
 2. **Build Tools:** Executing `npm install`, `npm run lint`, and `npm run build` completed with zero errors and generated successful production assets in the `dist` directory.
 
 ## Playwright Verification Results
-An automated Playwright script was executed against the built project. 
+An automated Playwright script was executed against the built project.
 * **Console Logs:** `None.` (0 runtime exceptions).
 * **House Sigils:** Render appropriately, and if missing, correctly fallback to the styled container rather than raw alt-text.
 * **Battles Page:** Renders battle records cleanly with correctly mapped and capitalized Commander/Participant strings.

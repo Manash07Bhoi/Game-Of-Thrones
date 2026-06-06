@@ -178,7 +178,16 @@ export const getLore = async () => {
 
   return lore;
 };
+
+export const search = async (query) => {
+  // Simple fallback search if needed, but the main app uses Fuse directly.
+  const searchIndex = await getSearchIndex();
+  if (!searchIndex) return [];
+  return searchIndex.filter(item => item.title.toLowerCase().includes(query.toLowerCase()) || item.content.toLowerCase().includes(query.toLowerCase()));
+};
+
 export const getSearchIndex = async () => fetchLocalJSON('search-index.json');
+
 
 export const getScriptIndex = async () => fetchLocalJSON('script-lines-index.json');
 export const getSeasonScript = async (seasonNumber) => fetchLocalJSON(`script-lines/season-${seasonNumber}.json`);
