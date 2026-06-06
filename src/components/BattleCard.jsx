@@ -40,17 +40,17 @@ const BattleCard = ({ battle, index }) => {
         <p style={{ fontFamily: 'Cinzel', fontSize: '10px', color: 'var(--gold)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '20px' }}>{battle.location} &bull; {battle.year}</p>
         <p style={{ fontFamily: 'IM Fell English', fontStyle: 'italic', color: 'var(--ash)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px' }}>{battle.background}</p>
 
-        {battle.commanders && (
+        {battle.commanders && battle.commanders.length > 0 && (
           <div style={{ marginBottom: '12px' }}>
             <span style={{ fontFamily: 'Cinzel', fontSize: '9px', color: 'var(--gold)', textTransform: 'uppercase' }}>Commanders: </span>
-            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--parchment)' }}>{battle.commanders.join(', ')}</span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--parchment)', textTransform: 'capitalize' }}>{battle.commanders.join(', ')}</span>
           </div>
         )}
 
-        {battle.participants && (
+        {battle.participants && battle.participants.length > 0 && (
           <div style={{ marginBottom: '12px' }}>
             <span style={{ fontFamily: 'Cinzel', fontSize: '9px', color: 'var(--gold)', textTransform: 'uppercase' }}>Participants: </span>
-            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--ash)' }}>{battle.participants.join(', ')}</span>
+            <span style={{ fontFamily: 'IM Fell English', fontSize: '13px', color: 'var(--ash)', textTransform: 'capitalize' }}>{battle.participants.join(', ')}</span>
           </div>
         )}
 

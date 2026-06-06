@@ -32,7 +32,13 @@ const Houses = () => {
           {houses.map((house) => (
             <div key={house.id} className="house-detail-row fade-up-scroll">
               <div className="house-detail-visual" style={{ background: house.bg, borderColor: house.borderColor }}>
-                <img src={`${import.meta.env.BASE_URL}${house.sigil_url}`} alt={house.name} className="house-detail-img" />
+                {house.sigil_url && house.sigil_url !== "null" ? (
+                  <img src={house.sigil_url.startsWith('http') ? house.sigil_url : `${import.meta.env.BASE_URL}${house.sigil_url}`} alt={house.name} className="house-detail-img" />
+                ) : (
+                  <div className="premium-fallback house-detail-img" style={{ background: house.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `2px solid ${house.accent}` }}>
+                    <span style={{ color: house.accent, fontSize: '48px' }}>{house.sigil}</span>
+                  </div>
+                )}
                 <h2 className="house-detail-name" style={{ color: house.accent }}>HOUSE {house.name}</h2>
                 <p className="house-detail-words">{house.words}</p>
                 <Link to={`/houses/${house.id}`} className="got-cta-ghost" style={{ marginTop: '24px', textDecoration: 'none' }}>

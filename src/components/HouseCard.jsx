@@ -62,15 +62,15 @@ const HouseCard = ({ house, index }) => {
 
       {/* Sigil */}
       <div ref={sigilRef} className="house-sigil-wrap">
-        {!imgError ? (
+        {(!imgError && house.sigil_url && house.sigil_url !== "null") ? (
           <img
             className="house-sigil-img"
-            src={house.sigil_url}
-            alt={`House ${house.name} sigil`}
+            src={house.sigil_url.startsWith('http') ? house.sigil_url : `${import.meta.env.BASE_URL}${house.sigil_url}`}
+            alt={house.name}
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="house-sigil-fallback">{house.sigil[0]}</div>
+          <div className="house-sigil-fallback" style={{ fontSize: '64px', color: house.accent, display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>{house.sigil}</div>
         )}
         <div className="sigil-ring" />
       </div>

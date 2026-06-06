@@ -42,7 +42,10 @@
 }
 
 @media (max-width: 640px) {
-  .section-characters, .section-battles { padding: 80px 24px; }
-  .characters-grid { grid-template-columns: 1fr; }
-  .battles-grid { grid-template-columns: 1fr; }
+  .section-characters, .section-battles { padding: 60px 16px; }
+  .characters-grid { grid-template-columns: 1fr; gap: 16px; }
+  .battles-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hero-scroll-prompt { bottom: 20px; }
+  .got-section-header { margin-bottom: 40px; }
+  .got-section-title { font-size: 32px; }
 }

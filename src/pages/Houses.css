@@ -139,9 +139,11 @@
 }
 
 @media (max-width: 900px) {
+  .houses-detailed-list { padding: 0 16px; gap: 48px; }
   .house-detail-row,
   .house-detail-row:nth-child(even) {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
   .house-detail-row:nth-child(even) .house-detail-visual {
     order: 1;
@@ -149,5 +151,8 @@
   .house-detail-row:nth-child(even) .house-detail-info {
     order: 2;
   }
-  .house-meta { flex-direction: column; gap: 12px; }
+  .house-meta { flex-direction: column; gap: 16px; }
+  .house-detail-visual { padding: 32px 16px; }
+  .house-detail-img { width: 120px; height: 120px; }
+  .house-detail-name { font-size: 24px; }
 }
