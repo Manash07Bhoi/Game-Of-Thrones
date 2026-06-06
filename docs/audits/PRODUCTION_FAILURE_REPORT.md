@@ -6,7 +6,7 @@ A critical, release-blocking production issue occurred where the live website (`
 ## Production Failure Report
 * **URL Affected:** `https://manash07bhoi.github.io/Game-Of-Thrones/`
 * **Symptom:** Black screen on site load. No navigation possible.
-* **Browser Console Logs:** 
+* **Browser Console Logs:**
   * `[UNHANDLED EXCEPTION] TypeError: Cannot read properties of null (reading 'map')`
 * **Failed Network Requests:** None detected. Assets and APIs were loading correctly, meaning `import.meta.env.BASE_URL` logic for fetching static dataset JSONs was configured correctly. The failure was strictly an application logic error.
 * **Vite Config Status:** `base: '/Game-Of-Thrones/'` was verified and correctly configured.
