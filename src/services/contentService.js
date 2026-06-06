@@ -27,7 +27,7 @@ export const getCharacters = async () => {
       const apiChar = apiChars ? apiChars.find(c => {
         const apiName = c.fullName.toLowerCase();
         const localName = localChar.name.toLowerCase();
-        return apiName === localName || 
+        return apiName === localName ||
                // Special case for characters with titles in API but not local, or vice versa, but must be very strict.
                (apiName.includes(localName) && localName.length > 5 && localName !== "jon" && localName !== "arya");
       }) : null;
@@ -123,7 +123,7 @@ export const getLore = async () => {
   if (battles && battles.length > 0) {
     const totalAttackers = battles.reduce((acc, b) => acc + (b.attackerSize || 0), 0);
     const totalDefenders = battles.reduce((acc, b) => acc + (b.defenderSize || 0), 0);
-    
+
     // Sort battles by year, filtering out nulls
     const sortedBattles = [...battles].filter(b => b.year).sort((a, b) => parseInt(a.year) - parseInt(b.year));
     let earliestYear = sortedBattles.length > 0 ? sortedBattles[0].year : 'Unknown';
@@ -144,7 +144,7 @@ export const getLore = async () => {
         regionCounts[loc.region] = (regionCounts[loc.region] || 0) + 1;
       }
     });
-    
+
     // Find top 3 most referenced regions
     const topRegions = Object.entries(regionCounts)
       .sort((a, b) => b[1] - a[1])

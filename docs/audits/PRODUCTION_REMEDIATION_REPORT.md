@@ -1,7 +1,7 @@
 # Production Remediation Report
 
 ## Overview
-Following the resolution of the critical black screen error, a full production remediation audit was conducted to address broken layouts, missing data mappings, failed images, and mobile UX issues across the application. 
+Following the resolution of the critical black screen error, a full production remediation audit was conducted to address broken layouts, missing data mappings, failed images, and mobile UX issues across the application.
 
 All identified issues have been verified locally via Playwright screenshots and are ready for deployment to the live environment.
 
@@ -22,7 +22,7 @@ All identified issues have been verified locally via Playwright screenshots and 
 
 ### Priority 3: Battles Page
 * **Symptom:** The Battles page loaded titles but lacked the internal grid CSS and failed to properly display battle participants and records.
-* **Root Cause:** 
+* **Root Cause:**
   1. The `.battles-grid` CSS was declared in `Home.css` but never imported into `Battles.jsx`.
   2. The raw dataset mappings for `commanders` and `participants` included internal slug prefixes like `char_` and `house_house-` that were never cleanly formatted before rendering.
 * **Fix:** Imported `Home.css` into `Battles.jsx`. Modified `mergeBattleData` to gracefully `.replace()` prefix IDs, rendering clean readable strings like `Jaime Lannister` instead of `char_jaime-lannister`.
@@ -35,7 +35,7 @@ All identified issues have been verified locally via Playwright screenshots and 
 ### Priority 5: Character Image Audit
 * **Symptom:** Minor characters were incorrectly inheriting the portraits of major characters (e.g., a random guard named Jon getting Jon Snow's image).
 * **Root Cause:** The image mapper in `contentService.js` was using a loose `OR` match on `firstName`.
-* **Fix:** Changed the matcher to strictly require exact `fullName` equivalence. 
+* **Fix:** Changed the matcher to strictly require exact `fullName` equivalence.
 * **Verification:** Generated `CHARACTER_IMAGE_AUDIT_v2.md` confirming 2580 total characters, 80 exact portrait matches, and 2500 characters safely falling back to the text-based premium placeholder, ensuring authenticity.
 
 ### Priority 6: Mobile UX
@@ -46,7 +46,7 @@ All identified issues have been verified locally via Playwright screenshots and 
 ---
 
 ## Playwright Verification Results
-An automated Playwright script was run against the built local preview server (`localhost:4173`). 
+An automated Playwright script was run against the built local preview server (`localhost:4173`).
 
 * **Console Errors:** `None.`
 * **Rendering:** All major pages (Home, Houses, Characters, Battles, Lore, Locations, Episodes, Seasons, Analytics) successfully loaded and saved valid screenshots without crashing.

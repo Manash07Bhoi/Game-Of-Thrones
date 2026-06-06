@@ -39,4 +39,3 @@ This audit details the verified datasets available in `processed-data/` to safel
 * **Record Count:** 1 aggregate object
 * **Available Fields:** `totalLines`, `seasons` (line count per season)
 * **Fields Consumed by Lore Page:** `totalLines` (Dialogue Statistics).
-
