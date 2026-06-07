@@ -10,7 +10,9 @@ const Section1 = () => {
 
   useEffect(() => {
     getHouses().then(data => {
-      setHouses(data.slice(0, 6))
+      const legendary = ['Stark', 'Lannister', 'Targaryen', 'Baratheon', 'Greyjoy', 'Tyrell'];
+      const curated = data.filter(h => legendary.includes(h.name)).sort((a,b) => legendary.indexOf(a.name) - legendary.indexOf(b.name));
+      setHouses(curated.length > 0 ? curated : data.slice(0, 6));
     })
   }, [])
 
